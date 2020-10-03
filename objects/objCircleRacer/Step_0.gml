@@ -32,3 +32,19 @@ if (enemy != noone) {
 	scrSetPush(40, point_direction(enemy.x, enemy.y, x, y));
 	instance_destroy();
 }
+
+//Check for goals
+var goal = instance_place(x, y, objGoal);
+if (goal != noone) {
+	//Spawn new goal
+	var rand = irandom(360);
+	var xx = objCircle.animatedPoints[rand][0];
+	var yy = objCircle.animatedPoints[rand][1];
+	var newGoal = instance_create_layer(xx, yy, layer, objGoal);
+	newGoal.follow = rand;
+	
+	instance_destroy(goal);
+}
+
+//Animation
+radius = lerp(radius, 4, 0.1);

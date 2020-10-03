@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"objGoalSpawner","path":"objects/objGoalSpawner/objGoalSpawner.yy",},"order":3,},
     {"id":{"name":"objCircleRacer","path":"objects/objCircleRacer/objCircleRacer.yy",},"order":1,},
     {"id":{"name":"objGoal","path":"objects/objGoal/objGoal.yy",},"order":6,},
     {"id":{"name":"rmKrisuTest","path":"rooms/rmKrisuTest/rmKrisuTest.yy",},"order":0,},

@@ -13,15 +13,3 @@ if (enemy != noone) {
 	scrSetPush(40, point_direction(enemy.x, enemy.y, x, y));
 	instance_destroy();
 }
-
-//Check for goals
-var goal = instance_place(x, y, objGoal);
-if (goal != noone) {
-	//Spawn new goal
-	var xx = room_width / 2 + lengthdir_x(global.circleRadius, goal.dir + 90);
-	var yy = room_height / 2 + lengthdir_y(global.circleRadius, goal.dir + 90);
-	var newGoal = instance_create_layer(xx, yy, layer, objGoal);
-	newGoal.dir = goal.dir + 90;
-	
-	instance_destroy(goal);
-}
