@@ -1,3 +1,2 @@
-alarm[0] = 1;
-pathLocation = 0;
-moveSpeed = 0.005;
+index = 270;
+movementSpeed = 1;

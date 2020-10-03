@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sprHitBox",
+    "path": "sprites/sprHitBox/sprHitBox.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

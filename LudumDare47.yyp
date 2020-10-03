@@ -6,6 +6,7 @@
     {"id":{"name":"sprJan","path":"sprites/sprJan/sprJan.yy",},"order":0,},
     {"id":{"name":"CameraFunctions","path":"scripts/CameraFunctions/CameraFunctions.yy",},"order":7,},
     {"id":{"name":"objJan","path":"objects/objJan/objJan.yy",},"order":1,},
+    {"id":{"name":"objEnemySpawner","path":"objects/objEnemySpawner/objEnemySpawner.yy",},"order":2,},
     {"id":{"name":"objPlayer","path":"objects/objPlayer/objPlayer.yy",},"order":3,},
     {"id":{"name":"objEnemy","path":"objects/objEnemy/objEnemy.yy",},"order":4,},
     {"id":{"name":"objCirclePlayer","path":"objects/objCirclePlayer/objCirclePlayer.yy",},"order":1,},
