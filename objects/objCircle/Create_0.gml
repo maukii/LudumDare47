@@ -11,6 +11,11 @@ center = {
 	y : room_height * 0.5
 }
 
+prevPoints = {
+	x : 0,
+	y : 0
+}
+
 for(var i = 0; i < array_length(points); i++) {
 	var angle = 2 * pi * (i / array_length(points));
 	
@@ -22,6 +27,9 @@ for(var i = 0; i < array_length(points); i++) {
 	points[i][0] = center.x + (radius + offset.x) * cos(angle);
 	points[i][1] = center.y + (radius + offset.y) * sin(angle);
 }
+
+animatedPoints = array_create(array_length(points),0);
+array_copy(animatedPoints, 0, points, 0, array_length(points));
 
 //Create path
 circlePath = path_add();
