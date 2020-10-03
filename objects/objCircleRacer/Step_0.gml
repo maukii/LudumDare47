@@ -86,8 +86,8 @@ if (pickup != noone) {
 			#region Get score object
 			//Spawn new goal
 			var point = index + irandom_range(90, 120) * choose(1, -1);
-			if (point > 360) point = abs(point - 360);
-			if (point < 0) point = 360 + point;
+			if (point > 359) point = abs(point - 359);
+			if (point < 0) point = 359 + point;
 			scrSpawnGoal(point);
 	
 			//Ramp up difficulty and fuck up the loop
@@ -108,8 +108,8 @@ if (pickup != noone) {
 			//Maybe spawn untangle object when shape is fucked up
 			if (objCircle.waves.shape >= 5 && !instance_exists(objUntangle)) {
 				point = index + 180 * choose(1, -1);
-				if (point > 360) point = abs(point - 360);
-				if (point < 0) point = 360 + point;
+				if (point > 359) point = abs(point - 359);
+				if (point < 0) point = 359 + point;
 				
 				scrSpawnUntangle(point);
 			}
