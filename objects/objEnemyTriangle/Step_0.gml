@@ -20,7 +20,7 @@ if(launched && instance_exists(objCircleRacer))
 	{
 		var pd = point_direction(x, y, player.x, player.y);
 		var dd = angle_difference(dir, pd);
-		dir -= min(abs(dd), 2) * sign(dd);
+		dir -= min(abs(dd), aimFactor) * sign(dd);
 		loops++;
 	}
 }

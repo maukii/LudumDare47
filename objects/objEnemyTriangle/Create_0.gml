@@ -9,6 +9,7 @@ else
 
 loops = 0;
 aimFrames = 100;
+aimFactor = 2;
 launchDelay = 120;
 launched = false;
 distanceFromCenter = 25;
