@@ -18,6 +18,9 @@ if (!dash.dashing) {
 		dash.cooldown = dash.cooldownMax;
 		dash.speed = dash.speedMax;
 		radius = 12;
+		
+		//FX
+		scrSetShake(20, 10);
 	}
 	
 	dash.cooldown = scrApproach(dash.cooldown, 0, 1);
@@ -47,15 +50,30 @@ y = cy;
 //Check for enemies
 var enemy = instance_place(x, y, objEnemyBase);
 if (enemy != noone) {
-	scrSetShake(50, 10);
 	scrSetPush(40, point_direction(enemy.x, enemy.y, x, y));
 	
 	if (dash.dashing) {
 		instance_destroy(enemy);
 		scrFreeze(100);
 	} else {
-		instance_destroy();
-		objGameManager.state = game_states.over;
+		instance_destroy(enemy);
+
+		if (hp > 1 && iframes == 0) {
+			hp--;
+			iframes = iframesMax;
+			flash = 3;
+			scrSetShake(50, 10);
+			scrSetRotation(10, true);
+			scrSetZoom(0.8);
+			scrFreeze(100);
+		} else if (iframes == 0){
+			objGameManager.state = game_states.over;
+			scrSetShake(50, 30);
+			scrSetRotation(10, true);
+			scrSetZoom(0.8);
+			scrFreeze(100);
+			instance_destroy();
+		}
 	}
 }
 
@@ -77,6 +95,7 @@ if (pickup != noone) {
 			objCircle.waves.amplitude = irandom_range(5, 20);
 			objCircle.waves.frequency = irandom_range(2, 6);
 			scrSetShake(40, 5);
+			scrFlash(0.2);
 	
 			//Destroy nearby enemies to avoid snapping into enemies
 			with (objEnemyBase) {
@@ -103,8 +122,9 @@ if (pickup != noone) {
 			objCircle.waves.shape = clamp(objCircle.waves.shape - 2, 0, 360);
 			objCircle.waves.amplitude = irandom_range(5, 10);
 			objCircle.waves.frequency = irandom_range(1, 3);
-			scrFlash(0.3);
+			scrFlash(0.2);
 			scrSetShake(20, 10);
+			objJan.scale -= .1;
 			#endregion
 		break;
 	}
@@ -114,4 +134,8 @@ if (pickup != noone) {
 }
 
 //Animation
-radius = lerp(radius, 4, 0.1);
+radius = lerp(radius, 6, 0.1);
+
+//Countdown iframes
+iframes = scrApproach(iframes, 0, 1);
+flash = scrApproach(flash, 0, 1);

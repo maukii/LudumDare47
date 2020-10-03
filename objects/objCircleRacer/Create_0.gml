@@ -13,3 +13,9 @@ dash = {
 }
 
 color = c_lime;
+
+hp = 3;
+iframes = 0;
+iframesMax = 120;
+
+flash = 0;
