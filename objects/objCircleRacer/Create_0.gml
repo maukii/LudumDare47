@@ -1,4 +1,15 @@
 index = 270;
-movementSpeed = 1;
-
+movementSpeed = 2;
 radius = 0;
+enemyDestroyDistance = 64;
+
+dash = {
+	cooldown : 0,
+	cooldownMax : 120,
+	dashing : false,
+	speed : 0,
+	speedMax : 8,
+	dir : 0
+}
+
+color = c_lime;
