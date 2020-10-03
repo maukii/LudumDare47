@@ -17,17 +17,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objGoalSpawner","path":"objects/objGoalSpawner/objGoalSpawner.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Enemy",
+    "path": "folders/Enemy.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objGoalSpawner",
+  "name": "objEnemyCircle",
   "tags": [],
   "resourceType": "GMObject",
 }

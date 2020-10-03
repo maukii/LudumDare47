@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemies",
-    "path": "folders/Enemies.yy",
+    "name": "Enemy",
+    "path": "folders/Enemy.yy",
   },
   "resourceVersion": "1.0",
   "name": "objEnemyCircle",

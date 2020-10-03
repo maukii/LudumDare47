@@ -8,13 +8,15 @@ angle = random(359);
 delay = 120;
 expanding = false;
 decaying = false;
+erect = false;
 alarm[0] = delay;
-
-mask_index = -1;
 
 maxImageScale = 10;
 image_xscale = 0;
 image_xscale = 0;
 image_angle = angle;
-x = targetPointX;
-y = targetPointY;
+
+drawX = targetPointX;
+drawY = targetPointY;
+x = 9999;
+y = 9999;
