@@ -1,0 +1,1 @@
+draw_circle(room_width / 2, room_height / 2, global.circleRadius,true);
