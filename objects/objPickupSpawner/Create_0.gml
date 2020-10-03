@@ -1,2 +1,2 @@
 //Create initial goal
-scrSpawnGoal(irandom(360));
+alarm[0] = 1;

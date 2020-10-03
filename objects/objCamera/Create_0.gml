@@ -26,6 +26,12 @@ shakeY = 0;
 pushX = 0;
 pushY = 0;
 
+//Camera zoom stuff
+zoomMultiplier = 1;
+zoomLerpSpeed = 0.1;
+zoomOffsetX = 0;
+zoomOffsetY = 0;
+
 //Camera rotation
 rot = 0;
 
@@ -47,12 +53,21 @@ function scrShake(){
 
 function scrPush(){
 	//Smoothly reset camera push
-	pushX = scrApproach(pushX, 0, 1);
-	pushY = scrApproach(pushY, 0, 1);
+	pushX = scrApproach(pushX, 0, 2);
+	pushY = scrApproach(pushY, 0, 2);
 }
 
 function scrRotate(){
-	rot = lerp(rot, 0, 0.1);
+	rot = lerp(rot, 0, 0.2);
 
 	camera_set_view_angle(view, rot);
+}
+
+function scrZoom() {
+	zoomMultiplier = lerp(zoomMultiplier, 1, zoomLerpSpeed);
+
+	zoomOffsetX = viewWidth - (viewWidth * zoomMultiplier);
+	zoomOffsetY = viewHeight - (viewHeight * zoomMultiplier);
+
+	camera_set_view_size(view, room_width * zoomMultiplier, room_height * zoomMultiplier);
 }

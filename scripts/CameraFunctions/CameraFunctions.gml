@@ -35,3 +35,10 @@ function scrSetShake(amount, duration){
 	objCamera.shakeAmount = amount;
 	objCamera.shakeDuration = duration;
 }
+
+function scrSetZoom(amount) {
+	///@desc Zoom camera
+	///@param amount
+
+	objCamera.zoomMultiplier = amount;
+}

@@ -36,12 +36,12 @@ if (erect) {
 	x = targetPointX;
 	y = targetPointY;
 } else {
-	drawX = targetPointX;
-	drawY = targetPointY;
-	
 	x = 9999;
 	y = 9999;
 }
 
+drawX = targetPointX;
+drawY = targetPointY;
+
 //Animate boi
-image_angle = point_direction(drawX, drawY, room_width/2, room_height/2) + scrWave(-10, 10, 4, 0);
+image_angle = point_direction(drawX, drawY, room_width/2, room_height/2) + scrWave(-20, 20, 3, 0);

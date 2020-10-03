@@ -1,4 +1,4 @@
-radius = 100;
+radius = 120;
 points = array_create(360, 0);
 size = array_length(points);
 
