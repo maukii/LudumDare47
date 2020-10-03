@@ -2,7 +2,7 @@
 //Use it to initialize shit
 
 #macro viewWidth 320
-#macro viewHeight 180
+#macro viewHeight 320
 
 global.windowScale = 3;
 
