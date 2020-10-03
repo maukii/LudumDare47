@@ -7,7 +7,8 @@ else
 	player = noone;	
 }
 
-
+loops = 0;
+aimFrames = 100;
 launchDelay = 120;
 launched = false;
 distanceFromCenter = 25;
