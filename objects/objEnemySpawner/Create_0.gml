@@ -1,2 +1,2 @@
-spawnFrequency = 10;
-alarm[0] = spawnFrequency;
+attackFrequency = 60;
+alarm[0] = attackFrequency;
