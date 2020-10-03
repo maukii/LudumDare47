@@ -1,15 +1,20 @@
 /// @description Spawn stuff
 if(spawningWave)
 {
-	var wave = ds_list_find_value(waves, spawningWaveIndex);
-	if(wave[_DELAY] == timer)
-	{
-		instance_create_layer(screenCenterX, screenCenterY, layer, wave[_TYPE]);	
+	for (var i = 0; i < ds_list_size(waves); i++)
+	{		
+		var next = ds_list_find_value(waves, i);
+		if(next[_WAVE] == spawningWaveIndex) && (next[_DELAY] == timer)
+		{
+			instance_create_layer(screenCenterX, screenCenterY, layer, next[_TYPE]);
+		}
 	}
 	
-	timer++;	
-}
-else
-{
-	timer = 0;
+	timer++;
+	
+	if(timer > maxDelay)
+	{
+		spawningWave = false;
+		timer = 0;
+	}
 }
