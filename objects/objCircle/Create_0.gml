@@ -1,5 +1,6 @@
 radius = 100;
 points = array_create(360, 0);
+size = array_length(points);
 
 offset = {
 	x : 0,
@@ -16,8 +17,8 @@ prevPoints = {
 	y : 0
 }
 
-for(var i = 0; i < array_length(points); i++) {
-	var angle = 2 * pi * (i / array_length(points));
+for(var i = 0; i < size; i++) {
+	var angle = 2 * pi * (i / size);
 	
 	var randX = random_range(-10, 10);
 	var randY = random_range(-10, 10);
@@ -28,8 +29,8 @@ for(var i = 0; i < array_length(points); i++) {
 	points[i][1] = center.y + (radius + offset.y) * sin(angle);
 }
 
-animatedPoints = array_create(array_length(points),0);
-array_copy(animatedPoints, 0, points, 0, array_length(points));
+animatedPoints = array_create(size, 0);
+array_copy(animatedPoints, 0, points, 0, size);
 
 //Create path
 circlePath = path_add();
