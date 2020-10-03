@@ -17,10 +17,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"parent":{"name":"objEnemySpawner","path":"objects/objEnemySpawner/objEnemySpawner.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objEnemySpawner","path":"objects/objEnemySpawner/objEnemySpawner.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
@@ -28,7 +25,7 @@
     "path": "folders/Enemy.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objEnemySpawner",
+  "name": "objEnemyTriangle",
   "tags": [],
   "resourceType": "GMObject",
 }

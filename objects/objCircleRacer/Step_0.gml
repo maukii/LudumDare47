@@ -45,14 +45,17 @@ x = cx;
 y = cy;
 
 //Check for enemies
-var enemy = instance_place(x, y, objEnemy);
+var enemy = instance_place(x, y, objEnemyBase);
 if (enemy != noone) {
-	scrSetShake(100, 10);
+	scrSetShake(50, 10);
 	scrSetPush(40, point_direction(enemy.x, enemy.y, x, y));
+	
 	if (dash.dashing) {
 		instance_destroy(enemy);
+		scrFreeze(100);
 	} else {
 		instance_destroy();
+		objGameManager.state = game_states.over;
 	}
 }
 
@@ -73,10 +76,10 @@ if (pickup != noone) {
 			objCircle.waves.shape++;
 			objCircle.waves.amplitude = irandom_range(5, 20);
 			objCircle.waves.frequency = irandom_range(2, 6);
-			scrSetShake(100, 5);
+			scrSetShake(40, 5);
 	
 			//Destroy nearby enemies to avoid snapping into enemies
-			with (objEnemy) {
+			with (objEnemyBase) {
 				if (distance_to_object(objCircleRacer) < other.enemyDestroyDistance) instance_destroy();
 			}
 	
@@ -100,8 +103,8 @@ if (pickup != noone) {
 			objCircle.waves.shape = clamp(objCircle.waves.shape - 2, 0, 360);
 			objCircle.waves.amplitude = irandom_range(5, 10);
 			objCircle.waves.frequency = irandom_range(1, 3);
-			scrFlash(0.2);
-			scrSetShake(40, 10);
+			scrFlash(0.3);
+			scrSetShake(20, 10);
 			#endregion
 		break;
 	}

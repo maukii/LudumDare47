@@ -5,7 +5,7 @@ enemyDestroyDistance = 64;
 
 dash = {
 	cooldown : 0,
-	cooldownMax : 120,
+	cooldownMax : 60,
 	dashing : false,
 	speed : 0,
 	speedMax : 8,

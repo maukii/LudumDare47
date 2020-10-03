@@ -1,1 +1,1 @@
-flashAlpha = scrApproach(flashAlpha, 0, 0.1);
+flashAlpha = scrApproach(flashAlpha, 0, 0.05);
