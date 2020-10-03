@@ -1,1 +1,0 @@
-path_start(objCircle.circlePath, 1, path_action_continue, true);
