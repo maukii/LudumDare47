@@ -8,11 +8,28 @@ if(spawningWave)
 		var next = ds_list_find_value(waves, i);
 		if(next[_WAVE] == spawningWaveIndex) && (next[_DELAY] == timer)
 		{
-			instance_create_layer(screenCenterX, screenCenterY, layer, next[_TYPE]);
+			switch(next[_TYPE])
+			{
+				case objEnemyCircle:
+					instance_create_layer(screenCenterX, screenCenterY, layer, next[_TYPE]);
+				break;
+				
+				case objEnemyTriangle:
+					dir = point_direction(screenCenterX, screenCenterY, objCircleRacer.x, objCircleRacer.y);
+					cx = screenCenterX + lengthdir_x(25, dir);
+					cy = screenCenterY + lengthdir_y(25, dir);
+					e = instance_create_layer(cx, cy, layer, next[_TYPE]);
+					e.dir = dir;
+				break;
+				
+				case objEnemyBox:
+					instance_create_layer(screenCenterX, screenCenterY, layer, next[_TYPE]);
+				break;
+			}
 		}
 	}
 	
-	if(timer > maxDelay)
+	if(timer > maxDelay + delayBetweenWaves)
 	{
 		spawningWave = false;
 	}
@@ -22,5 +39,6 @@ else
 	timer = 0;
 	maxDelay = -1;
 	spawningWave = false;
-	SpawnWave(spawningWaveIndex++);
+	spawningWaveIndex++;
+	SpawnWave(spawningWaveIndex);
 }

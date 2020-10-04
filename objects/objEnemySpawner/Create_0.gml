@@ -5,6 +5,7 @@
 screenCenterX = room_width * 0.5;
 screenCenterY = room_height * 0.5;
 
+delayBetweenWaves = 120;
 maxDelay = -1;
 timer = 0;
 spawningWave = false;
@@ -55,6 +56,7 @@ function SpawnWave(waveIndex)
 			maxDelay = next[_DELAY];
 		}
 	}
+
 	
 	spawningWaveIndex = waveIndex;
 	spawningWave = true;
