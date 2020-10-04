@@ -97,7 +97,7 @@ function scrTrongleExplosion (amount) {
 }
 
 function scrBoxExplosion (amount) {
-repeat (amount) instance_create_layer(xx, yy, "Enemies", objBoxGib);
+repeat (amount) instance_create_layer(x, y, "Enemies", objBoxGib);
 	audio_play_sound(sndBoxExplosion, 10, false);
 }
 

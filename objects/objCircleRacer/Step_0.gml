@@ -232,7 +232,7 @@ if (pickup != noone) {
 			}
 			
 			//Maybe spawn health when player is low
-			if (random(2.5 / hp) > 1) {
+			if (!instance_exists(objHealth) && random(2.5 / hp) > 1) {
 				point = index + 180 * choose(1, -1);
 				if (point > 359) point = abs(point - 359);
 				if (point < 0) point = 359 + point;
