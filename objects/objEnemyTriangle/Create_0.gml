@@ -22,3 +22,6 @@ height = room_height * 0.5;
 alarm[0] = launchDelay;
 
 scr = 5;
+
+size = 0;
+maxSize = 8;

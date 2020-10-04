@@ -1,6 +1,6 @@
 image_angle = scrWave(-15, 15, 4, 0);
 
-scale = clamp(scale + 0.001, 0, 5);
+scale = clamp(scale + 0.001, 0, 2);
 
 image_xscale = scale + scrWave(-0.1, 0.2, 3, 0);
 image_yscale = scale + scrWave(-0.1, 0.2, 5, 0);

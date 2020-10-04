@@ -31,3 +31,6 @@ y += lengthdir_y(moveSpeed, dir);
 //Particles
 part_type_direction(global.trongleEnemyPart, dir + 160, dir + 200, 0, 0);
 if (launched) part_particles_create(global.prtSys, x, y, global.trongleEnemyPart, 1);
+
+//Animation
+size = lerp(size, maxSize, 0.1);

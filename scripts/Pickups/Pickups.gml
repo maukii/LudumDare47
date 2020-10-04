@@ -21,3 +21,14 @@ function scrSpawnUntangle (point) {
 	image_xscale = 2;
 	image_yscale = 2;
 }
+
+function scrSpawnHealth (point) {
+	//Goal spawns
+	var xx = objCircle.animatedPoints[point][0];
+	var yy = objCircle.animatedPoints[point][1];
+	var goal = instance_create_layer(xx, yy, "Pickups", objHealth);
+	goal.follow = point;
+	goal.col = c_lime;
+	image_xscale = 2;
+	image_yscale = 2;
+}

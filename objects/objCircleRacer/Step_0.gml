@@ -9,9 +9,13 @@ if ((move != 0  || keyboard_check_pressed(vk_space)) && usingMouse) {
 	usingMouse = false;
 	lastMouseX = device_mouse_raw_x(0);
 	lastMouseY = device_mouse_raw_y(0);
+	window_set_cursor(cr_none);
 }
 
-if (!usingMouse && device_mouse_raw_x(0) != lastMouseX && device_mouse_raw_y(0) != lastMouseY) usingMouse = true;
+if (!usingMouse && device_mouse_raw_x(0) != lastMouseX && device_mouse_raw_y(0) != lastMouseY) {
+	usingMouse = true;
+	window_set_cursor(cr_default);
+}
 
 var prevIndex = index;
 
@@ -219,6 +223,14 @@ if (pickup != noone) {
 				
 				scrSpawnUntangle(point);
 			}
+			
+			//Maybe spawn health when player is low
+			if (random(3 / hp) > 1) {
+				point = index + 180 * choose(1, -1);
+				if (point > 359) point = abs(point - 359);
+				if (point < 0) point = 359 + point;
+				scrSpawnHealth(point);
+			}
 			#endregion
 		break;
 		
@@ -235,6 +247,12 @@ if (pickup != noone) {
 			objJan.scale -= .1;
 			scrSpawnText(pickup.x, pickup.y, "UNTANGLE");
 			#endregion
+		break;
+		
+		case objHealth:
+			hp++;
+			scrFlash(0.2);
+			scrSpawnText(pickup.x, pickup.y, "+1 HP");
 		break;
 	}
 	

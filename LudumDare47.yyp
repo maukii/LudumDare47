@@ -37,6 +37,7 @@
     {"id":{"name":"objCamera","path":"objects/objCamera/objCamera.yy",},"order":0,},
     {"id":{"name":"scrInitCircle","path":"scripts/scrInitCircle/scrInitCircle.yy",},"order":3,},
     {"id":{"name":"shdFlash","path":"shaders/shdFlash/shdFlash.yy",},"order":1,},
+    {"id":{"name":"objHealth","path":"objects/objHealth/objHealth.yy",},"order":3,},
     {"id":{"name":"rmCircleTest","path":"rooms/rmCircleTest/rmCircleTest.yy",},"order":0,},
     {"id":{"name":"objEnemyCircle","path":"objects/objEnemyCircle/objEnemyCircle.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
