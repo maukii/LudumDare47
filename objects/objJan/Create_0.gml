@@ -1,8 +1,8 @@
-pointsToSpawn = 1000;
+pointsToSpawn = 1;
 scale = 0;
 maxScale = 2;
 bossActive = false;
-
+bossHealth = 3;
 
 #macro _WAVE 0
 #macro _TYPE 1
@@ -119,5 +119,22 @@ function SpawnWave(index)
 function SpecialAttack()
 {
 	wavesComplited = 0;
-	instance_create_layer(screenCenterX, screenCenterY, "Enemies", objEnemySpit);
+	instance_create_layer(screenCenterX, screenCenterY, "Enemies", objEnemyHeart);
+}
+	
+function TakeDamage()
+{
+	bossHealth--;
+	if(bossHealth <= 0)
+	{
+		// Jan dead boy here	
+		spawningWave = false;
+	}
+	
+	// animation
+	// particles
+	// angry jan
+	// increase difficulty
+	delayBetweenWaves -= 20;
+	wavesPerPhase++;
 }
