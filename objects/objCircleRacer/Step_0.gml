@@ -5,6 +5,8 @@ var left = keyboard_check(ord("A"));
 var right = keyboard_check(ord("D"));
 var move = right - left;
 
+var prevIndex = index;
+
 var closestPoint = 100000;
 var point;
 
@@ -32,8 +34,13 @@ if (!dash.dashing) {
 	if (index > array_length(points)-1) index = 0;
 	if (index < 0) index = array_length(points)-1;
 	
-	if (keyboard_check_pressed(vk_space) && dash.cooldown == 0) {
+	if ((keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left)) && dash.cooldown == 0) {
 		dash.dashing = true;
+				
+		if(prevIndex < index)
+			move = 1;
+		else
+			move = -1;
 		if (move == 0) move = 1;
 		dash.dir = move;
 		dash.cooldown = dash.cooldownMax;
