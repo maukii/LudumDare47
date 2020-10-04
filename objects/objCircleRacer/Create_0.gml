@@ -19,3 +19,7 @@ iframes = 120;
 iframesMax = 120;
 
 flash = 0;
+
+usingMouse = true;
+lastMouseX = 0;
+lastMouseY = 0;

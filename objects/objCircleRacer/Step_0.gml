@@ -5,6 +5,14 @@ var left = keyboard_check(ord("A"));
 var right = keyboard_check(ord("D"));
 var move = right - left;
 
+if ((move != 0  || keyboard_check_pressed(vk_space)) && usingMouse) {
+	usingMouse = false;
+	lastMouseX = device_mouse_raw_x(0);
+	lastMouseY = device_mouse_raw_y(0);
+}
+
+if (!usingMouse && device_mouse_raw_x(0) != lastMouseX && device_mouse_raw_y(0) != lastMouseY) usingMouse = true;
+
 var prevIndex = index;
 
 var closestPoint = 100000;
@@ -21,12 +29,14 @@ for	(var i = 0; i < array_length(points)-1; i++)
 }
 
 // Mouse movement
-if(point > 270 && index < 90)
-	index -= movementSpeed;
-else if(point < 90 && index > 270)
-	index += movementSpeed;
-else
-	index = scrApproach(index, point, movementSpeed);	
+if (usingMouse) {
+	if(point > 270 && index < 90)
+		index -= movementSpeed;
+	else if(point < 90 && index > 270)
+		index += movementSpeed;
+	else
+		index = scrApproach(index, point, movementSpeed);	
+}
 
 if (!dash.dashing) {
 	index += move * movementSpeed;
