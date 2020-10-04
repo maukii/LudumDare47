@@ -4,6 +4,12 @@ var points = objCircle.animatedPoints;
 var left = keyboard_check(ord("A"));
 var right = keyboard_check(ord("D"));
 var move = right - left;
+if (move != 0) {
+	movementSpeed = scrApproach(movementSpeed, maxMovementSpeed, 0.1);
+	round(movementSpeed);
+} else {
+	movementSpeed = 1;
+}
 
 if ((move != 0  || keyboard_check_pressed(vk_space)) && usingMouse) {
 	usingMouse = false;
@@ -34,6 +40,7 @@ for	(var i = 0; i < array_length(points)-1; i++)
 
 // Mouse movement
 if (usingMouse) {
+	movementSpeed = maxMovementSpeed;
 	if(point > 270 && index < 90)
 		index -= movementSpeed;
 	else if(point < 90 && index > 270)
@@ -111,7 +118,7 @@ if (enemy != noone) {
 				//Particles
 				scrBoxExplosion(20);
 			break;
-			case objEnemySpit:
+			case objEnemyHeart:
 				//Particles
 				scrCircleExplosion(50);
 			break;
@@ -132,6 +139,8 @@ if (enemy != noone) {
 		scrFreeze(200);
 		objCircle.waves.noise = 20;
 		audio_play_sound(sndHurt, 100, false);
+		scrSetSpiralColor(0.5, 0., 0.);
+		scrSetSpiralSpeed(3);
 
 		if (hp > 1 && iframes == 0) {
 			hp--;
@@ -172,6 +181,7 @@ if (pickup != noone) {
 			audio_sound_pitch(sndScoreGet, scorePitch);
 			audio_play_sound(sndScoreGet, 10, false);
 			scorePitch += 0.01;
+			scrSetSpiralColor(0., 0.5, 0.5);
 	
 			//Destroy nearby enemies to avoid snapping into enemies
 			with (objEnemyCircle) {
@@ -259,6 +269,7 @@ if (pickup != noone) {
 			objJan.scale -= .1;
 			scrSpawnText(pickup.x, pickup.y, "UNTANGLE");
 			audio_play_sound(sndUntangle, 10, false);
+			scrSetSpiralColor(0.5, 0.5, 0.);
 			#endregion
 		break;
 		
@@ -267,6 +278,7 @@ if (pickup != noone) {
 			scrFlash(0.2);
 			scrSpawnText(pickup.x, pickup.y, "+1 HP");
 			audio_play_sound(sndHPGet, 10, false);
+			scrSetSpiralColor(0., 0.5, 0.);
 		break;
 	}
 	
