@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprHitBox",
-    "path": "sprites/sprHitBox/sprHitBox.yy",
+    "name": "sprHeart",
+    "path": "sprites/sprHeart/sprHeart.yy",
   },
   "solid": false,
   "visible": true,

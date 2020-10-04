@@ -22,3 +22,7 @@ if(instance_exists(objCircleRacer))
 }
 x = width + lengthdir_x(distanceFromCenter, dir);
 y = height + lengthdir_y(distanceFromCenter, dir);
+
+image_angle = 0;
+image_xscale = 0.05;
+image_yscale = 0.05;

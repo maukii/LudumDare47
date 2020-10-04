@@ -25,3 +25,6 @@ scr = 5;
 
 size = 0;
 maxSize = 8;
+
+image_xscale = 0.05;
+image_yscale = 0.05;
