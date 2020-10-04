@@ -15,6 +15,10 @@ if(spawningWave)
 				break;
 				
 				case objEnemyTriangle:
+					if(!instance_exists(objCircleRacer))
+					{
+						continue;
+					}
 					dir = point_direction(screenCenterX, screenCenterY, objCircleRacer.x, objCircleRacer.y);
 					cx = screenCenterX + lengthdir_x(25, dir);
 					cy = screenCenterY + lengthdir_y(25, dir);
@@ -39,6 +43,7 @@ else
 	timer = 0;
 	maxDelay = -1;
 	spawningWave = false;
-	spawningWaveIndex++;
+	spawningWaveIndex = irandom_range(1, 3);
+	show_debug_message(spawningWaveIndex);
 	SpawnWave(spawningWaveIndex);
 }
