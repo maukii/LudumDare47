@@ -24,7 +24,7 @@ waves = {
 	amplitudeTarget : 0,
 }
 
-var noiseAmplitude = 10;
+var noiseAmplitude = 0;
 
 for(var i = 0; i < size; i++) {
 	var angle = 2 * pi * (i / size);

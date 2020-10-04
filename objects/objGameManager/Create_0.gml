@@ -4,7 +4,7 @@ enum game_states {
 	over
 }
 
-state = game_states.playing;
+state = game_states.start;
 overAlpha = 0;
 global.curScore = 0;
 
