@@ -1,8 +1,13 @@
-pointsToSpawn = 5000;
+pointsToSpawn = 200;
 scale = 0;
-maxScale = 2;
+maxScale = 0.2;
 bossActive = false;
 bossHealth = 3;
+
+image_speed = 0;
+image_index = 4;
+laughing = false;
+laughFrames = 120;
 
 #macro _WAVE 0
 #macro _TYPE 1
@@ -81,7 +86,7 @@ ds_list_add(waves, [3, objEnemyCircle, 10]);
 ds_list_add(waves, [3, objEnemyCircle, 10]);
 
 
-function StartBoss(index)
+function StartBoss()
 {
 	bossActive = true;
 	with (objEnemySpawner)
@@ -99,7 +104,7 @@ function StartBoss(index)
 		instance_destroy();	
 	}
 	
-	SpawnWave(index);
+	laughing = true;
 }
 
 function SpawnWave(index)

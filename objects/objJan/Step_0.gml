@@ -1,17 +1,23 @@
-image_angle = scrWave(-15, 15, 4, 0);
+if(laughing)
+{	
+	alarm[0] = 1;
+	alarm[1] = laughFrames;
+}
+
+image_angle = scrWave(-10, 10, 4, 0);
 
 scale = clamp(scale + 0.05, 0, maxScale);
 
-image_xscale = scale + scrWave(-0.1, 0.2, 3, 0);
-image_yscale = scale + scrWave(-0.1, 0.2, 5, 0);
+image_xscale = scale + scrWave(-0.1, 0.1, 3, 0);
+image_yscale = scale + scrWave(-0.1, 0.1, 5, 0);
 
-x = xstart + scrWave(-10, 10, 5, 0);
-y = ystart + scrWave(-10, 10, 3, 2);
+x = xstart + scrWave(-5, 5, 5, 0);
+y = ystart + scrWave(-5, 5, 3, 2);
 		
 if(scale >= maxScale)
 {	
 	if(!bossActive && global.curScore > pointsToSpawn)
-		StartBoss(0);
+		StartBoss();
 }
 
 if(spawningWave)
