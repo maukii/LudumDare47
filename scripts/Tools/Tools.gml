@@ -65,19 +65,6 @@ function scrWave2(from, to, duration, offset){
 	return from + a4 + cos((((current_time * 0.001) + duration * offset) / duration) * (pi*2)) * a4;
 }
 
-function scrFreeze(duration){
-	///@desc Freeze game
-	///@param duration
-
-	var time = current_time;
-	var dur = duration;
-
-	while (current_time < time + dur)
-	{
-		//Haha code go brrr
-	}
-}
-
 function scrOffscreen() {
 	//Despawn
 	if (x < -sprite_width || x > room_width + sprite_width) {

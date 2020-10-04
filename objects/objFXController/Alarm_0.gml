@@ -1,2 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+var time = current_time;
+
+while (current_time < time + freezeDuration)
+{
+	//Haha code go brrr
+}

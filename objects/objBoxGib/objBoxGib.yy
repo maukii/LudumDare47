@@ -25,8 +25,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemy",
-    "path": "folders/Enemy.yy",
+    "name": "Effects",
+    "path": "folders/Effects.yy",
   },
   "resourceVersion": "1.0",
   "name": "objBoxGib",

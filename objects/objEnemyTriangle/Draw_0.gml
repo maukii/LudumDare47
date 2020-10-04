@@ -16,8 +16,8 @@ var c = c_purple;
 
 if(!launched)
 {
-	var randX = random_range(-2, 2);
-	var randY = random_range(-2, 2);
+	var randX = random_range(-2, 2) * (launchDelay - alarm[0]) / 20;
+	var randY = random_range(-2, 2) * (launchDelay - alarm[0]) / 20;
 	x1 = lerp(x1, x1 + randX, 0.5);	
 	x2 = lerp(x2, x2 + randX, 0.5);
 	x3 = lerp(x3, x3 + randX, 0.5);
@@ -28,3 +28,4 @@ if(!launched)
 
 draw_triangle_color(x1, y1, x2, y2, x3, y3, c, c, c, false);
 
+if (alarm[10] != -1) draw_line_width(x, y, objCircleRacer.x, objCircleRacer.y, 10);

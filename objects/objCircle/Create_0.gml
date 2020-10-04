@@ -20,7 +20,8 @@ prevPoints = {
 waves = {
 	amplitude : 20,
 	frequency : 2,
-	shape : 1
+	shape : 1,
+	amplitudeTarget : 20,
 }
 
 var noiseAmplitude = 10;

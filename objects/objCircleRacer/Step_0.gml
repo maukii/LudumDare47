@@ -27,7 +27,7 @@ if (!dash.dashing) {
 	if (dash.cooldown = 0) {
 		color = c_lime;
 	} else {
-		color = c_green;
+		color = merge_color(c_white, c_lime, scrWave(0, 1, 0.2, 0));
 	}
 } else if (dash.dashing) {
 	index += dash.dir * dash.speed;
@@ -81,7 +81,7 @@ if (enemy != noone) {
 			scrSetShake(50, 10);
 			scrSetRotation(10, true);
 			scrSetZoom(0.8);
-			scrFreeze(100);
+			scrFreeze(200);
 		} else if (iframes == 0){
 			objGameManager.state = game_states.over;
 			scrSetShake(50, 30);
@@ -108,8 +108,8 @@ if (pickup != noone) {
 	
 			//Ramp up difficulty and fuck up the loop
 			objCircle.waves.shape++;
-			objCircle.waves.amplitude = irandom_range(5, 20);
-			objCircle.waves.frequency = irandom_range(2, 6);
+			objCircle.waves.amplitudeTarget = irandom_range(10, 30);
+			objCircle.waves.frequency = irandom_range(2, 4);
 			scrSetShake(40, 5);
 			scrFlash(0.2);
 	
@@ -117,7 +117,7 @@ if (pickup != noone) {
 			with (objEnemyCircle) {
 				if (distance_to_object(objCircleRacer) < other.enemyDestroyDistance) {
 					alarm[10] = 2;
-					scrFreeze(10);
+					scrFreeze(20);
 					
 					//Particles
 					scrCircleExplosion(50);
@@ -127,7 +127,7 @@ if (pickup != noone) {
 			with (objEnemyTriangle) {
 				if (distance_to_object(objCircleRacer) < other.enemyDestroyDistance) {
 					alarm[10] = 2;
-					scrFreeze(10);
+					scrFreeze(20);
 					
 					//Particles
 					scrTrongleExplosion(50);
@@ -136,6 +136,7 @@ if (pickup != noone) {
 	
 			//Increment score
 			global.curScore++;
+			scrSpawnText(pickup.x, pickup.y, "+1");
 			
 			//Maybe spawn untangle object when shape is fucked up
 			if (objCircle.waves.shape >= 5 && !instance_exists(objUntangle) && random(1) > 0.5) {
@@ -152,11 +153,14 @@ if (pickup != noone) {
 			#region
 			//Reduce shape
 			objCircle.waves.shape = clamp(objCircle.waves.shape - 2, 0, 360);
-			objCircle.waves.amplitude = irandom_range(5, 10);
-			objCircle.waves.frequency = irandom_range(1, 3);
+			objCircle.waves.amplitudeTarget = irandom_range(5, 10);
+			objCircle.waves.frequency = irandom_range(4, 6);
+			
+			//FX
 			scrFlash(0.2);
 			scrSetShake(20, 10);
 			objJan.scale -= .1;
+			scrSpawnText(pickup.x, pickup.y, "UNTANGLE");
 			#endregion
 		break;
 	}
@@ -180,7 +184,7 @@ if (move != 0 || dash.dashing) {
 	part_type_direction(global.playerPart, 70, 110, 0, 0);
 }
 
-part_particles_create(global.prtSys, x, y, global.playerPart, 1);
+if (dash.cooldown == 0) part_particles_create(global.prtSys, x, y, global.playerPart, 1);
 
 //Dash particles
 if (dash.dashing) {

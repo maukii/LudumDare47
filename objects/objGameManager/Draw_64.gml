@@ -8,6 +8,13 @@ switch (state) {
 	break;
 	
 	case game_states.over:
+		//Dim play area
+		overAlpha = scrApproach(overAlpha, 0.8, 0.01);
+		draw_set_alpha(overAlpha);
+		var c = c_black;
+		draw_rectangle_color(0, 0, room_width, room_height, c, c, c, c, false);
+		draw_set_alpha(1);
+		
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		draw_set_font(fntUIBig);

@@ -1,5 +1,6 @@
 //Init particles
 global.prtSys = part_system_create();
+global.ambientPrtSys = part_system_create();
 
 //Player particles
 global.playerPart = part_type_create();
@@ -67,6 +68,18 @@ part_type_life(p, 30, 30);
 part_type_size(p, 0.02, 0.06, -0.001, 0);
 part_type_direction(p, 0, 359, 0, 0);
 
+//Ambient particles
+global.ambientPart = part_type_create();
+var p = global.ambientPart;
+part_type_color1(p, c_white);
+part_type_speed(p, 0, 0, 0.01, 0);
+part_type_shape(p, pt_shape_disk);
+part_type_life(p, 720, 720);
+part_type_size(p, 0, 0, 0.001, 0);
+part_type_direction(p, 0, 359, 1, 0);
+part_type_alpha1(p, 0.1);
+part_type_blend(p, false);
+
 function scrFlash (alpha) {
 	objFXController.flashAlpha = alpha;
 }
@@ -82,3 +95,15 @@ function scrTrongleExplosion (amount) {
 }
 
 
+function scrSpawnText(xx, yy, text) {
+	var t = instance_create_layer(xx, yy, "Pickups", objFloatingText);
+	t.txt = text;
+}
+
+function scrFreeze(duration){
+	///@desc Freeze game
+	///@param duration
+
+	objFXController.freezeDuration = duration;
+	objFXController.alarm[0] = 1;
+}
