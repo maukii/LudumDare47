@@ -5,7 +5,7 @@
 screenCenterX = room_width * 0.5;
 screenCenterY = room_height * 0.5;
 
-maxDelay = 5000;
+maxDelay = -1;
 timer = 0;
 spawningWave = false;
 spawningWaveIndex = -1;
@@ -13,10 +13,22 @@ waves = ds_list_create();
 
 // [type, delay]
 ds_list_add(waves, [1, objEnemyCircle, 0]);
+ds_list_add(waves, [1, objEnemyCircle, 10]);
+ds_list_add(waves, [1, objEnemyCircle, 20]);
+ds_list_add(waves, [1, objEnemyCircle, 30]);
+ds_list_add(waves, [1, objEnemyCircle, 40]);
 ds_list_add(waves, [1, objEnemyCircle, 50]);
+ds_list_add(waves, [1, objEnemyCircle, 60]);
+ds_list_add(waves, [1, objEnemyCircle, 70]);
+ds_list_add(waves, [1, objEnemyCircle, 80]);
+ds_list_add(waves, [1, objEnemyCircle, 90]);
 ds_list_add(waves, [1, objEnemyCircle, 100]);
-ds_list_add(waves, [1, objEnemyCircle, 0]);
-ds_list_add(waves, [1, objEnemyCircle, 50]);
+ds_list_add(waves, [1, objEnemyCircle, 100]);
+ds_list_add(waves, [1, objEnemyCircle, 100]);
+ds_list_add(waves, [1, objEnemyCircle, 100]);
+ds_list_add(waves, [1, objEnemyCircle, 100]);
+ds_list_add(waves, [1, objEnemyCircle, 100]);
+ds_list_add(waves, [1, objEnemyCircle, 100]);
 ds_list_add(waves, [1, objEnemyCircle, 100]);
 
 ds_list_add(waves, [2, objEnemyTriangle, 10]);
@@ -34,9 +46,18 @@ ds_list_add(waves, [3, objEnemyBox, 50]);
 ds_list_add(waves, [3, objEnemyTriangle, 60]);
 
 function SpawnWave(waveIndex)
-{
+{		
+	for (var i = 0; i < ds_list_size(waves); i++)
+	{		
+		var next = ds_list_find_value(waves, i);
+		if(next[_WAVE] == waveIndex) && (next[_DELAY] > maxDelay)
+		{
+			maxDelay = next[_DELAY];
+		}
+	}
+	
 	spawningWaveIndex = waveIndex;
 	spawningWave = true;
 }
 
-SpawnWave(2);
+SpawnWave(1);

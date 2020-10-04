@@ -1,6 +1,8 @@
 /// @description Spawn stuff
 if(spawningWave)
 {
+	timer++;
+	
 	for (var i = 0; i < ds_list_size(waves); i++)
 	{		
 		var next = ds_list_find_value(waves, i);
@@ -10,11 +12,15 @@ if(spawningWave)
 		}
 	}
 	
-	timer++;
-	
 	if(timer > maxDelay)
 	{
 		spawningWave = false;
-		timer = 0;
 	}
+}
+else
+{
+	timer = 0;
+	maxDelay = -1;
+	spawningWave = false;
+	SpawnWave(spawningWaveIndex++);
 }
