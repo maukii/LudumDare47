@@ -45,3 +45,6 @@ drawY = targetPointY;
 
 //Animate boi
 image_angle = point_direction(drawX, drawY, room_width/2, room_height/2) + scrWave(-20, 20, 3, 0);
+
+//Warning particles
+if (alarm[0] != -1) part_particles_create(global.prtSys, drawX, drawY, global.boxEnemyPart, 1);

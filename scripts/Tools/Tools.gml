@@ -77,3 +77,14 @@ function scrFreeze(duration){
 		//Haha code go brrr
 	}
 }
+
+function scrOffscreen() {
+	//Despawn
+	if (x < -sprite_width || x > room_width + sprite_width) {
+		return true;
+	} else if (y < -sprite_height || y > room_height + sprite_height) {
+		return true;
+	} else {
+		return false;
+	}
+}

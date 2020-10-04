@@ -27,3 +27,7 @@ if(launched && instance_exists(objCircleRacer))
 
 x += lengthdir_x(moveSpeed, dir);
 y += lengthdir_y(moveSpeed, dir);
+
+//Particles
+part_type_direction(global.trongleEnemyPart, dir + 160, dir + 200, 0, 0);
+if (launched) part_particles_create(global.prtSys, x, y, global.trongleEnemyPart, 1);

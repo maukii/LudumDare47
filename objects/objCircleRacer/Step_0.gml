@@ -53,6 +53,22 @@ if (enemy != noone) {
 	scrSetPush(40, point_direction(enemy.x, enemy.y, x, y));
 	
 	if (dash.dashing) {
+		switch (enemy.object_index) {
+			case objEnemyCircle:
+				//Particles
+				scrCircleExplosion(50);
+			break;
+			
+			case objEnemyTriangle:
+				//Particles
+				scrTrongleExplosion(50);
+			break;
+			
+			case objEnemyBox:
+				repeat (20) instance_create_layer(enemy.x, enemy.y, "Enemies", objBoxGib);
+			break;
+		}
+		
 		instance_destroy(enemy);
 		scrFreeze(100);
 	} else {
@@ -98,15 +114,31 @@ if (pickup != noone) {
 			scrFlash(0.2);
 	
 			//Destroy nearby enemies to avoid snapping into enemies
-			with (objEnemyBase) {
-				if (distance_to_object(objCircleRacer) < other.enemyDestroyDistance) instance_destroy();
+			with (objEnemyCircle) {
+				if (distance_to_object(objCircleRacer) < other.enemyDestroyDistance) {
+					alarm[10] = 2;
+					scrFreeze(10);
+					
+					//Particles
+					scrCircleExplosion(50);
+				}
+			}
+			
+			with (objEnemyTriangle) {
+				if (distance_to_object(objCircleRacer) < other.enemyDestroyDistance) {
+					alarm[10] = 2;
+					scrFreeze(10);
+					
+					//Particles
+					scrTrongleExplosion(50);
+				}
 			}
 	
 			//Increment score
 			global.curScore++;
 			
 			//Maybe spawn untangle object when shape is fucked up
-			if (objCircle.waves.shape >= 5 && !instance_exists(objUntangle)) {
+			if (objCircle.waves.shape >= 5 && !instance_exists(objUntangle) && random(1) > 0.5) {
 				point = index + 180 * choose(1, -1);
 				if (point > 359) point = abs(point - 359);
 				if (point < 0) point = 359 + point;
@@ -139,3 +171,21 @@ radius = lerp(radius, 6, 0.1);
 //Countdown iframes
 iframes = scrApproach(iframes, 0, 1);
 flash = scrApproach(flash, 0, 1);
+
+//Constant particles
+var moveDir = point_direction(x, y, xprevious, yprevious);
+if (move != 0 || dash.dashing) {
+	part_type_direction(global.playerPart, moveDir - 20, moveDir + 20, 0, 0);
+} else {
+	part_type_direction(global.playerPart, 70, 110, 0, 0);
+}
+
+part_particles_create(global.prtSys, x, y, global.playerPart, 1);
+
+//Dash particles
+if (dash.dashing) {
+	repeat (10) {
+		part_type_direction(global.playerDashPart, moveDir - 20, moveDir + 20, 1, 5);
+		part_particles_create(global.prtSys, x, y, global.playerDashPart, 1);
+	}
+}

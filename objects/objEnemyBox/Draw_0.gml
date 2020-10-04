@@ -5,4 +5,4 @@ for (var i = thickness; i > 0; --i) {
 }
 
 
-if (!erect) draw_sprite_ext(sprPixel, 0, drawX, drawY, maxImageScale, maxImageScale, image_angle, c_red, scrWave(0.1, 0.5, 1, 0));
+if (!erect && !decaying) draw_sprite_ext(sprPixel, 0, drawX, drawY, maxImageScale, maxImageScale, image_angle, c_red, scrWave(0.1, 0.5, 1, 0));
