@@ -111,9 +111,13 @@ if (enemy != noone) {
 				//Particles
 				scrBoxExplosion(20);
 			break;
-			case objEnemySpit:
+			case objEnemyHeart:
 				//Particles
 				scrCircleExplosion(50);
+				with(objJan)
+				{
+					TakeDamage();
+				}
 			break;
 		}
 		
