@@ -1,5 +1,6 @@
 index = 270;
-movementSpeed = 2;
+movementSpeed = 1;
+maxMovementSpeed = 2;
 radius = 0;
 enemyDestroyDistance = 64;
 
