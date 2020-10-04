@@ -50,11 +50,26 @@ if(spawningWave)
 	
 	if(timer > maxDelay + delayBetweenWaves)
 	{
+		wavesComplited++;
+		
 		spawningWave = false;
 		timer = 0;
 		maxDelay = -1;
 		spawningWave = false;
-		waveIndex = irandom_range(1, 3);		
+		var lastIndex = waveIndex;
+		for(var i = 0; i < 10; i++)
+		{
+			waveIndex = irandom_range(1, 3);
+			if(waveIndex != lastIndex)
+				break;
+		}
+		
+		if(wavesComplited >= wavesPerPhase)
+		{	
+			SpecialAttack();
+			return;
+		}
+		
 		SpawnWave(waveIndex);
 	}
 }

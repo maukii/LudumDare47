@@ -7,6 +7,7 @@
     {"id":{"name":"objFloatingText","path":"objects/objFloatingText/objFloatingText.yy",},"order":1,},
     {"id":{"name":"sprPixel","path":"sprites/sprPixel/sprPixel.yy",},"order":5,},
     {"id":{"name":"objEnemyBox","path":"objects/objEnemyBox/objEnemyBox.yy",},"order":3,},
+    {"id":{"name":"objEnemyHeart","path":"objects/objEnemyHeart/objEnemyHeart.yy",},"order":6,},
     {"id":{"name":"objCircleRacer","path":"objects/objCircleRacer/objCircleRacer.yy",},"order":1,},
     {"id":{"name":"objFXController","path":"objects/objFXController/objFXController.yy",},"order":4,},
     {"id":{"name":"shdSpiral","path":"shaders/shdSpiral/shdSpiral.yy",},"order":0,},

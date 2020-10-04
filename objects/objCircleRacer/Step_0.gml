@@ -108,7 +108,12 @@ if (enemy != noone) {
 			break;
 			
 			case objEnemyBox:
+				//Particles
 				scrBoxExplosion(20);
+			break;
+			case objEnemySpit:
+				//Particles
+				scrCircleExplosion(50);
 			break;
 		}
 		
