@@ -15,11 +15,11 @@ dash = {
 color = c_lime;
 
 hp = 3;
-iframes = 120;
-iframesMax = 120;
+iframes = 0;
+iframesMax = 180;
 
 flash = 0;
 
-usingMouse = true;
-lastMouseX = 0;
-lastMouseY = 0;
+usingMouse = false;
+lastMouseX = device_mouse_raw_x(0);
+lastMouseY = device_mouse_raw_y(0);

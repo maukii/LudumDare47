@@ -114,23 +114,24 @@ if (enemy != noone) {
 		scrFreeze(100);
 	} else {
 		instance_destroy(enemy);
+		
+		scrSetShake(50, 10);
+		scrSetRotation(10, true);
+		scrSetZoom(0.8);
+		scrFreeze(200);
+		objCircle.waves.noise = 20;
 
 		if (hp > 1 && iframes == 0) {
 			hp--;
 			iframes = iframesMax;
 			flash = 3;
-			scrSetShake(50, 10);
-			scrSetRotation(10, true);
-			scrSetZoom(0.8);
-			scrFreeze(200);
 			
+			//Destroy all enemies onscreen
 			with (objEnemyBase) alarm[10] = 2;
 		} else if (iframes == 0){
 			objGameManager.state = game_states.over;
 			scrSetShake(50, 30);
-			scrSetRotation(10, true);
-			scrSetZoom(0.8);
-			scrFreeze(100);
+
 			instance_destroy();
 		}
 	}
@@ -181,6 +182,18 @@ if (pickup != noone) {
 				}
 			}
 			
+			with (objEnemyBox) {
+				if (distance_to_object(objCircleRacer) < other.enemyDestroyDistance) {
+					alarm[10] = 2;
+					scrFreeze(20);
+					
+					//Particles
+					repeat (20) instance_create_layer(x, y, "Enemies", objBoxGib);
+					global.curScore += scr;
+					scrSpawnText(x, y, "+" + string(scr));
+				}
+			}
+			
 			//Start waves when picking up first thing
 			if (global.curScore == 0) {
 				with (objEnemySpawner) {
@@ -199,7 +212,7 @@ if (pickup != noone) {
 			scrSpawnText(pickup.x, pickup.y, "+" + string(pickup.goalScore));
 			
 			//Maybe spawn untangle object when shape is fucked up
-			if (objCircle.waves.shape >= 5 && !instance_exists(objUntangle) && random(1) > 0.5) {
+			if (objCircle.waves.shape >= 5 && !instance_exists(objUntangle) && random(1) + objCircle.waves.shape / 50 > 0.5) {
 				point = index + 180 * choose(1, -1);
 				if (point > 359) point = abs(point - 359);
 				if (point < 0) point = 359 + point;

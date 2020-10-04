@@ -22,6 +22,8 @@ waves = {
 	frequency : 10,
 	shape : 1,
 	amplitudeTarget : 0,
+	noise : 0,
+	noiseTarget : 0
 }
 
 var noiseAmplitude = 0;

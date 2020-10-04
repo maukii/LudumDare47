@@ -3,8 +3,12 @@ switch (state) {
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_center);
 		draw_set_font(fntUISmall);
+		var txt = "MOVE PLAYER BY\nMOVING THE CURSOR\nOR BY\nPRESSING A AND D\n\nDASH BY LEFT CLICKING\nOR PRESSING SPACE";
+		var c = c_red;
 		
-		draw_text(room_width/2, room_height/2, "MOVE PLAYER BY\nMOVING THE CURSOR\nOR BY\nPRESSING A AND D");
+		draw_text_color(room_width/2 + 1, room_height/2 + 1, txt, c, c, c, c, 1);
+		
+		draw_text(room_width/2, room_height/2, txt);
 	break;
 	
 	case game_states.playing:
