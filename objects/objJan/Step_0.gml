@@ -69,7 +69,9 @@ if(spawningWave)
 			SpecialAttack();
 			return;
 		}
-		
-		SpawnWave(waveIndex);
+		else
+		{
+			SpawnWave(waveIndex);
+		}
 	}
 }

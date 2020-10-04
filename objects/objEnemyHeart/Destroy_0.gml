@@ -1,4 +1,5 @@
 with(objJan)
 {
-	SpawnWave(random_range(1, 3));	
+	if(bossHealth > 0)
+		SpawnWave(random_range(1, 3));	
 }

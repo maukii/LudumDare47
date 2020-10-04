@@ -9,7 +9,7 @@ else
 
 scr = 100;
 size = 10;
-moveSpeed = 1;
+moveSpeed = 0;
 dir = 0;
 distanceFromCenter = 5;
 

@@ -1,4 +1,4 @@
-pointsToSpawn = 1;
+pointsToSpawn = 5000;
 scale = 0;
 maxScale = 2;
 bossActive = false;
@@ -58,15 +58,7 @@ ds_list_add(waves, [2, objEnemyBox, 10]);
 ds_list_add(waves, [2, objEnemyBox, 10]);
 ds_list_add(waves, [2, objEnemyBox, 10]);
 ds_list_add(waves, [2, objEnemyTriangle, 10]);
-ds_list_add(waves, [2, objEnemyTriangle, 10]);
-ds_list_add(waves, [2, objEnemyTriangle, 20]);
-ds_list_add(waves, [2, objEnemyTriangle, 30]);
-ds_list_add(waves, [2, objEnemyTriangle, 40]);
 ds_list_add(waves, [2, objEnemyTriangle, 50]);
-ds_list_add(waves, [2, objEnemyTriangle, 60]);
-ds_list_add(waves, [2, objEnemyTriangle, 70]);
-ds_list_add(waves, [2, objEnemyTriangle, 80]);
-ds_list_add(waves, [2, objEnemyTriangle, 90]);
 ds_list_add(waves, [2, objEnemyTriangle, 100]);
 
 ds_list_add(waves, [3, objEnemyBox, 50]);
@@ -79,6 +71,14 @@ ds_list_add(waves, [3, objEnemyBox, 50]);
 ds_list_add(waves, [3, objEnemyBox, 50]);
 ds_list_add(waves, [3, objEnemyBox, 50]);
 ds_list_add(waves, [3, objEnemyBox, 50]);
+ds_list_add(waves, [3, objEnemyCircle, 10]);
+ds_list_add(waves, [3, objEnemyCircle, 10]);
+ds_list_add(waves, [3, objEnemyCircle, 10]);
+ds_list_add(waves, [3, objEnemyCircle, 10]);
+ds_list_add(waves, [3, objEnemyCircle, 10]);
+ds_list_add(waves, [3, objEnemyCircle, 10]);
+ds_list_add(waves, [3, objEnemyCircle, 10]);
+ds_list_add(waves, [3, objEnemyCircle, 10]);
 
 
 function StartBoss(index)
