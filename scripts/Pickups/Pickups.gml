@@ -6,7 +6,7 @@ function scrSpawnGoal (point) {
 	var yy = objCircle.animatedPoints[point][1];
 	var goal = instance_create_layer(xx, yy, "Pickups", objGoal);
 	goal.follow = point;
-	goal.col = c_lime;
+	goal.col = c_aqua;
 	image_xscale = 2;
 	image_yscale = 2;
 }

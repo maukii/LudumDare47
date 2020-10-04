@@ -20,3 +20,5 @@ drawX = targetPointX;
 drawY = targetPointY;
 x = 9999;
 y = 9999;
+
+scr = 10;
