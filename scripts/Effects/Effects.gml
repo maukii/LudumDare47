@@ -114,3 +114,13 @@ function scrFreeze(duration){
 	objFXController.freezeDuration = duration;
 	objFXController.alarm[0] = 1;
 }
+
+function scrSetSpiralColor(r, g, b) {
+	objBackground.white[0] = r;
+	objBackground.white[1] = g;
+	objBackground.white[2] = b;
+}
+
+function scrSetSpiralSpeed(multiplier) {
+	objBackground.timeMultiplier = multiplier;
+}

@@ -4,15 +4,16 @@ varying vec4 v_vPosition;
 
 uniform vec2 iResolution;
 uniform float time;
+uniform float timeMultiplier;
+
+uniform vec4 white;
+uniform vec4 black;
 
 // Speed multiplier of the rotation
 uniform float rotationSpeed;
 
 void main()
 {    
-
-    vec4 white = vec4(0.1, 0.1, 0.1, 1.);
-    vec4 black = vec4(0., 0., 0., 1.);
     
     vec2 uv = v_vTexcoord.xy / .5 - 1.;
     uv.x *= iResolution.x / iResolution.y;
@@ -24,7 +25,7 @@ void main()
     f += atan(uv.x, uv.y) / acos(0.);
     
     // let's roll
-    f += time / 1000.;
+    f += time / 1000. * timeMultiplier;
     
     // make it black and white
        f = floor(fract(f) * 2.);
