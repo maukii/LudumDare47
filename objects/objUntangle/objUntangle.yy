@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprHitBox",
-    "path": "sprites/sprHitBox/sprHitBox.yy",
+    "name": "sprPickups",
+    "path": "sprites/sprPickups/sprPickups.yy",
   },
   "solid": false,
   "visible": true,
@@ -23,7 +23,9 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objUntangle","path":"objects/objUntangle/objUntangle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {

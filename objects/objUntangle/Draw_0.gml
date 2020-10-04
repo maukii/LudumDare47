@@ -1,0 +1,1 @@
+draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, scrWave(-20, 20, 2, 0), c_white, 1);

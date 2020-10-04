@@ -7,8 +7,11 @@ function scrSpawnGoal (point) {
 	var goal = instance_create_layer(xx, yy, "Pickups", objGoal);
 	goal.follow = point;
 	goal.col = c_aqua;
-	image_xscale = 2;
-	image_yscale = 2;
+	
+	goal.sprite_index = sprCoin;
+	goal.image_xscale = 0.05;
+	goal.image_yscale = 0.05;
+	
 }
 
 function scrSpawnUntangle (point) {
@@ -18,8 +21,11 @@ function scrSpawnUntangle (point) {
 	var goal = instance_create_layer(xx, yy, "Pickups", objUntangle);
 	goal.follow = point;
 	goal.col = c_yellow;
-	image_xscale = 2;
-	image_yscale = 2;
+	
+	goal.image_index = 0;
+	goal.image_speed = 0;
+	goal.image_xscale = 0.05;
+	goal.image_yscale = 0.05;
 }
 
 function scrSpawnHealth (point) {
@@ -29,6 +35,9 @@ function scrSpawnHealth (point) {
 	var goal = instance_create_layer(xx, yy, "Pickups", objHealth);
 	goal.follow = point;
 	goal.col = c_lime;
-	image_xscale = 2;
-	image_yscale = 2;
+	
+	goal.image_index = 2;
+	goal.image_speed = 0;
+	goal.image_xscale = 0.05;
+	goal.image_yscale = 0.05;
 }

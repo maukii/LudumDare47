@@ -34,3 +34,4 @@ if (launched) part_particles_create(global.prtSys, x, y, global.trongleEnemyPart
 
 //Animation
 size = lerp(size, maxSize, 0.1);
+image_angle = dir - 90;

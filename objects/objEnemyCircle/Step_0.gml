@@ -13,6 +13,7 @@ if (y < -sprite_height || y > room_height + sprite_height) {
 
 //Animation
 radius = lerp(radius, 8, 0.02);
+image_angle += rotSpeed;
 
 //Particles
 part_type_direction(global.circleEnemyPart, dir + 160, dir + 200, 0, 0);
