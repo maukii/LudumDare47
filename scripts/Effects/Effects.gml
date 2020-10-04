@@ -96,7 +96,7 @@ function scrTrongleExplosion (amount) {
 
 
 function scrSpawnText(xx, yy, text) {
-	var t = instance_create_layer(xx, yy, "Pickups", objFloatingText);
+	var t = instance_create_layer(xx, yy, "Instances", objFloatingText);
 	t.txt = text;
 }
 

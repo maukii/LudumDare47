@@ -4,4 +4,7 @@ radius = 0;
 
 col = c_lime;
 
-enemyDestroyDistance = 64;
+enemyDestroyDistance = 0;
+enemyDestroyDistanceMax = 64;
+
+goalScore = 100;

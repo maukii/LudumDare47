@@ -69,6 +69,9 @@ if (enemy != noone) {
 			break;
 		}
 		
+		global.curScore += enemy.scr;
+		scrSpawnText(enemy.x, enemy.y, "+" + string(enemy.scr));
+		
 		instance_destroy(enemy);
 		scrFreeze(100);
 	} else {
@@ -82,6 +85,8 @@ if (enemy != noone) {
 			scrSetRotation(10, true);
 			scrSetZoom(0.8);
 			scrFreeze(200);
+			
+			with (objEnemyBase) alarm[10] = 2;
 		} else if (iframes == 0){
 			objGameManager.state = game_states.over;
 			scrSetShake(50, 30);
@@ -121,6 +126,8 @@ if (pickup != noone) {
 					
 					//Particles
 					scrCircleExplosion(50);
+					global.curScore += scr;
+					scrSpawnText(x, y, "+" + string(scr));
 				}
 			}
 			
@@ -131,12 +138,14 @@ if (pickup != noone) {
 					
 					//Particles
 					scrTrongleExplosion(50);
+					global.curScore += scr;
+					scrSpawnText(x, y, "+" + string(scr));
 				}
 			}
 	
 			//Increment score
-			global.curScore++;
-			scrSpawnText(pickup.x, pickup.y, "+1");
+			global.curScore  += pickup.goalScore;
+			scrSpawnText(pickup.x, pickup.y, "+" + string(pickup.goalScore));
 			
 			//Maybe spawn untangle object when shape is fucked up
 			if (objCircle.waves.shape >= 5 && !instance_exists(objUntangle) && random(1) > 0.5) {

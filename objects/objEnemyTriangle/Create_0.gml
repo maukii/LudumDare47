@@ -20,3 +20,5 @@ width = room_width * 0.5;
 height = room_height * 0.5;
 
 alarm[0] = launchDelay;
+
+scr = 5;
