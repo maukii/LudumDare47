@@ -5,6 +5,27 @@ var left = keyboard_check(ord("A"));
 var right = keyboard_check(ord("D"));
 var move = right - left;
 
+var closestPoint = 100000;
+var point;
+
+for	(var i = 0; i < array_length(points)-1; i++)
+{
+	var distance = point_distance(points[i][0], points[i][1], mouse_x, mouse_y);
+	if(distance < closestPoint)
+	{
+		closestPoint = distance;
+		point = i;
+	}
+}
+
+// Mouse movement
+if(point > 270 && index < 90)
+	index -= movementSpeed;
+else if(point < 90 && index > 270)
+	index += movementSpeed;
+else
+	index = scrApproach(index, point, movementSpeed);	
+
 if (!dash.dashing) {
 	index += move * movementSpeed;
 	
@@ -152,6 +173,8 @@ if (pickup != noone) {
 				var jan = instance_create_layer(room_width/2, room_height/2, "Pickups", objJan);
 				jan.image_xscale = 0;
 				jan.image_yscale = 0;
+				
+				objGameManager.state = game_states.playing;
 			}
 	
 			//Increment score
