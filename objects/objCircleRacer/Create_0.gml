@@ -23,3 +23,5 @@ flash = 0;
 usingMouse = false;
 lastMouseX = device_mouse_raw_x(0);
 lastMouseY = device_mouse_raw_y(0);
+
+scorePitch = 1;
