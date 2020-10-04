@@ -44,6 +44,5 @@ else
 	maxDelay = -1;
 	spawningWave = false;
 	spawningWaveIndex = irandom_range(1, 3);
-	show_debug_message(spawningWaveIndex);
 	SpawnWave(spawningWaveIndex);
 }

@@ -5,7 +5,7 @@
 screenCenterX = room_width * 0.5;
 screenCenterY = room_height * 0.5;
 
-delayBetweenWaves = 120;
+delayBetweenWaves = 150;
 maxDelay = -1;
 timer = 0;
 spawningWave = false;
@@ -13,6 +13,42 @@ spawningWaveIndex = -1;
 waves = ds_list_create(); 
 
 // [type, delay]
+ds_list_add(waves, [0, objEnemyCircle, 0]);
+ds_list_add(waves, [0, objEnemyCircle, 0]);
+ds_list_add(waves, [0, objEnemyCircle, 50]);
+ds_list_add(waves, [0, objEnemyCircle, 50]);
+ds_list_add(waves, [0, objEnemyCircle, 50]);
+ds_list_add(waves, [0, objEnemyCircle, 100]);
+ds_list_add(waves, [0, objEnemyCircle, 100]);
+ds_list_add(waves, [0, objEnemyCircle, 100]);
+ds_list_add(waves, [0, objEnemyCircle, 150]);
+ds_list_add(waves, [0, objEnemyCircle, 150]);
+ds_list_add(waves, [0, objEnemyCircle, 150]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyCircle, 400]);
+ds_list_add(waves, [0, objEnemyTriangle, 650]);
+ds_list_add(waves, [0, objEnemyTriangle, 800]);
+ds_list_add(waves, [0, objEnemyTriangle, 950]);
+ds_list_add(waves, [0, objEnemyBox, 1200]);
+ds_list_add(waves, [0, objEnemyBox, 1200]);
+ds_list_add(waves, [0, objEnemyBox, 1200]);
+ds_list_add(waves, [0, objEnemyBox, 1300]);
+ds_list_add(waves, [0, objEnemyBox, 1300]);
+ds_list_add(waves, [0, objEnemyBox, 1300]);
+ds_list_add(waves, [0, objEnemyBox, 1400]);
+ds_list_add(waves, [0, objEnemyBox, 1400]);
+ds_list_add(waves, [0, objEnemyBox, 1400]);
+ds_list_add(waves, [0, objEnemyBox, 1400]);
+ds_list_add(waves, [0, objEnemyBox, 1400]);
+
 ds_list_add(waves, [1, objEnemyCircle, 0]);
 ds_list_add(waves, [1, objEnemyCircle, 10]);
 ds_list_add(waves, [1, objEnemyCircle, 20]);
@@ -21,8 +57,6 @@ ds_list_add(waves, [1, objEnemyCircle, 40]);
 ds_list_add(waves, [1, objEnemyCircle, 50]);
 ds_list_add(waves, [1, objEnemyCircle, 60]);
 ds_list_add(waves, [1, objEnemyCircle, 70]);
-ds_list_add(waves, [1, objEnemyCircle, 80]);
-ds_list_add(waves, [1, objEnemyCircle, 90]);
 ds_list_add(waves, [1, objEnemyCircle, 100]);
 ds_list_add(waves, [1, objEnemyCircle, 100]);
 ds_list_add(waves, [1, objEnemyCircle, 100]);
@@ -36,30 +70,19 @@ ds_list_add(waves, [1, objEnemyCircle, 100]);
 ds_list_add(waves, [1, objEnemyCircle, 100]);
 ds_list_add(waves, [1, objEnemyCircle, 100]);
 ds_list_add(waves, [1, objEnemyCircle, 100]);
-ds_list_add(waves, [1, objEnemyCircle, 100]);
-ds_list_add(waves, [1, objEnemyCircle, 100]);
-ds_list_add(waves, [1, objEnemyCircle, 100]);
-
 
 ds_list_add(waves, [2, objEnemyTriangle, 10]);
 ds_list_add(waves, [2, objEnemyCircle, 10]);
 ds_list_add(waves, [2, objEnemyCircle, 10]);
-ds_list_add(waves, [2, objEnemyCircle, 10]);
 ds_list_add(waves, [2, objEnemyCircle, 30]);
 ds_list_add(waves, [2, objEnemyCircle, 30]);
-ds_list_add(waves, [2, objEnemyCircle, 30]);
-ds_list_add(waves, [2, objEnemyTriangle, 60]);
 ds_list_add(waves, [2, objEnemyCircle, 60]);
 ds_list_add(waves, [2, objEnemyCircle, 60]);
-ds_list_add(waves, [2, objEnemyCircle, 60]);
-ds_list_add(waves, [2, objEnemyCircle, 90]);
 ds_list_add(waves, [2, objEnemyCircle, 90]);
 ds_list_add(waves, [2, objEnemyCircle, 90]);
 ds_list_add(waves, [2, objEnemyTriangle, 120]);
 ds_list_add(waves, [2, objEnemyCircle, 120]);
 ds_list_add(waves, [2, objEnemyCircle, 120]);
-ds_list_add(waves, [2, objEnemyCircle, 120]);
-ds_list_add(waves, [2, objEnemyCircle, 150]);
 ds_list_add(waves, [2, objEnemyCircle, 150]);
 ds_list_add(waves, [2, objEnemyCircle, 150]);
 
@@ -69,16 +92,11 @@ ds_list_add(waves, [3, objEnemyCircle, 10]);
 ds_list_add(waves, [3, objEnemyCircle, 10]);
 ds_list_add(waves, [3, objEnemyCircle, 10]);
 ds_list_add(waves, [3, objEnemyCircle, 10]);
-ds_list_add(waves, [3, objEnemyCircle, 10]);
-ds_list_add(waves, [3, objEnemyCircle, 10]);
 ds_list_add(waves, [3, objEnemyBox, 10]);
 ds_list_add(waves, [3, objEnemyBox, 10]);
 ds_list_add(waves, [3, objEnemyBox, 10]);
 ds_list_add(waves, [3, objEnemyBox, 10]);
 ds_list_add(waves, [3, objEnemyBox, 10]);
-ds_list_add(waves, [3, objEnemyTriangle, 50]);
-ds_list_add(waves, [3, objEnemyCircle, 100]);
-ds_list_add(waves, [3, objEnemyCircle, 100]);
 ds_list_add(waves, [3, objEnemyCircle, 100]);
 ds_list_add(waves, [3, objEnemyCircle, 100]);
 ds_list_add(waves, [3, objEnemyCircle, 100]);
@@ -101,4 +119,4 @@ function SpawnWave(waveIndex)
 	spawningWave = true;
 }
 
-SpawnWave(1);
+SpawnWave(0);
