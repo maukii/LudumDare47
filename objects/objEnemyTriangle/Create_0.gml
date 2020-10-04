@@ -8,8 +8,8 @@ else
 }
 
 loops = 0;
-aimFrames = 100;
-aimFactor = 2;
+aimFrames = 50;
+aimFactor = 1.5;
 launchDelay = 120;
 launched = false;
 distanceFromCenter = 25;
