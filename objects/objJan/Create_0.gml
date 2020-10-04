@@ -1,4 +1,4 @@
-pointsToSpawn = 3000;
+pointsToSpawn = 1000;
 scale = 0;
 maxScale = 2;
 bossActive = false;
@@ -16,9 +16,10 @@ maxDelay = -1;
 timer = 0;
 spawningWave = false;
 waveIndex = -1;
+wavesComplited = 0;
+wavesPerPhase = 5;
 
 waves = ds_list_create(); 
-ds_list_add(waves, [0, objEnemyCircle, 0]);
 
 ds_list_add(waves, [1, objEnemyCircle, 10]);
 ds_list_add(waves, [1, objEnemyCircle, 10]);
@@ -113,4 +114,10 @@ function SpawnWave(index)
 			maxDelay = next[_DELAY];
 		}
 	}
+}
+	
+function SpecialAttack()
+{
+	wavesComplited = 0;
+	instance_create_layer(screenCenterX, screenCenterY, "Enemies", objEnemySpit);
 }
