@@ -125,6 +125,8 @@ function SpecialAttack()
 {
 	wavesComplited = 0;
 	instance_create_layer(screenCenterX, screenCenterY, "Enemies", objEnemyHeart);
+	alarm[2] = 1;
+	ResetFace(60);
 }
 	
 function TakeDamage()
@@ -142,4 +144,11 @@ function TakeDamage()
 	// increase difficulty
 	delayBetweenWaves -= 20;
 	wavesPerPhase++;
+	alarm[3] = 1;
+	ResetFace(60);
+}
+
+function ResetFace(delay)
+{
+	alarm[10] = delay;	
 }

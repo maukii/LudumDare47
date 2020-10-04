@@ -2,4 +2,4 @@
 
 laughing = false;
 sprite_index = sprJanLaugh;
-image_speed = .75;
+image_speed = .1;
