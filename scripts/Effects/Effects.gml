@@ -87,11 +87,18 @@ function scrFlash (alpha) {
 function scrCircleExplosion (amount) {
 	part_type_direction(global.circleEnemyExplosionPart, 0, 359, 0, 0);
 	part_particles_create(global.prtSys, x, y, global.circleEnemyExplosionPart, amount);
+	audio_play_sound(sndCircleExplosion, 10, false);
 }	
 
 function scrTrongleExplosion (amount) {
 	part_type_direction(global.trongleEnemyExplosionPart, 0, 359, 0, 0);
 	part_particles_create(global.prtSys, x, y, global.trongleEnemyExplosionPart, amount);
+	audio_play_sound(sndTrongleExplosion, 10, false);
+}
+
+function scrBoxExplosion (amount) {
+repeat (amount) instance_create_layer(x, y, "Enemies", objBoxGib);
+	audio_play_sound(sndBoxExplosion, 10, false);
 }
 
 

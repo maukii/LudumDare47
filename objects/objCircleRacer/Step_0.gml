@@ -63,6 +63,7 @@ if (!dash.dashing) {
 		
 		//FX
 		scrSetShake(20, 10);
+		audio_play_sound(sndDash, 10, false);
 	}
 	
 	dash.cooldown = scrApproach(dash.cooldown, 0, 1);
@@ -107,7 +108,7 @@ if (enemy != noone) {
 			break;
 			
 			case objEnemyBox:
-				repeat (20) instance_create_layer(enemy.x, enemy.y, "Enemies", objBoxGib);
+				scrBoxExplosion(20);
 			break;
 		}
 		
@@ -116,6 +117,7 @@ if (enemy != noone) {
 		
 		instance_destroy(enemy);
 		scrFreeze(100);
+		audio_play_sound(sndDashHit, 10, false);
 	} else {
 		instance_destroy(enemy);
 		
@@ -124,6 +126,7 @@ if (enemy != noone) {
 		scrSetZoom(0.8);
 		scrFreeze(200);
 		objCircle.waves.noise = 20;
+		audio_play_sound(sndHurt, 100, false);
 
 		if (hp > 1 && iframes == 0) {
 			hp--;
@@ -158,8 +161,12 @@ if (pickup != noone) {
 			objCircle.waves.shape++;
 			objCircle.waves.amplitudeTarget = irandom_range(10, 30);
 			objCircle.waves.frequency = irandom_range(2, 4);
+			
 			scrSetShake(40, 5);
 			scrFlash(0.2);
+			audio_sound_pitch(sndScoreGet, scorePitch);
+			audio_play_sound(sndScoreGet, 10, false);
+			scorePitch += 0.01;
 	
 			//Destroy nearby enemies to avoid snapping into enemies
 			with (objEnemyCircle) {
@@ -192,7 +199,7 @@ if (pickup != noone) {
 					scrFreeze(20);
 					
 					//Particles
-					repeat (20) instance_create_layer(x, y, "Enemies", objBoxGib);
+					scrBoxExplosion(20);
 					global.curScore += scr;
 					scrSpawnText(x, y, "+" + string(scr));
 				}
@@ -225,7 +232,7 @@ if (pickup != noone) {
 			}
 			
 			//Maybe spawn health when player is low
-			if (random(3 / hp) > 1) {
+			if (!instance_exists(objHealth) && random(2.5 / hp) > 1) {
 				point = index + 180 * choose(1, -1);
 				if (point > 359) point = abs(point - 359);
 				if (point < 0) point = 359 + point;
@@ -246,6 +253,7 @@ if (pickup != noone) {
 			scrSetShake(20, 10);
 			objJan.scale -= .1;
 			scrSpawnText(pickup.x, pickup.y, "UNTANGLE");
+			audio_play_sound(sndUntangle, 10, false);
 			#endregion
 		break;
 		
@@ -253,6 +261,7 @@ if (pickup != noone) {
 			hp++;
 			scrFlash(0.2);
 			scrSpawnText(pickup.x, pickup.y, "+1 HP");
+			audio_play_sound(sndHPGet, 10, false);
 		break;
 	}
 	
