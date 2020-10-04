@@ -36,13 +36,12 @@ if(spawningWave)
 	if(timer > maxDelay + delayBetweenWaves)
 	{
 		spawningWave = false;
-	}
+		{
+		timer = 0;
+		maxDelay = -1;
+		spawningWave = false;
+		spawningWaveIndex = irandom_range(1, 3);
+		SpawnWave(spawningWaveIndex);
 }
-else
-{
-	timer = 0;
-	maxDelay = -1;
-	spawningWave = false;
-	spawningWaveIndex = irandom_range(1, 3);
-	SpawnWave(spawningWaveIndex);
+	}
 }

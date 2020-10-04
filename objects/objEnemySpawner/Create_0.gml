@@ -118,5 +118,3 @@ function SpawnWave(waveIndex)
 	spawningWaveIndex = waveIndex;
 	spawningWave = true;
 }
-
-SpawnWave(0);
