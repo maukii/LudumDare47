@@ -1,1 +1,1 @@
-scrSpawnGoal(irandom(360));
+scrSpawnGoal(90);

@@ -6,3 +6,5 @@ for (var i = thickness; i > 0; --i) {
 
 
 if (!erect && !decaying) draw_sprite_ext(sprPixel, 0, drawX, drawY, maxImageScale, maxImageScale, image_angle, c_red, scrWave(0.1, 0.5, 1, 0));
+
+if (alarm[10] != -1 && instance_exists(objCircleRacer)) draw_line_width(x, y, objCircleRacer.x, objCircleRacer.y, 10);

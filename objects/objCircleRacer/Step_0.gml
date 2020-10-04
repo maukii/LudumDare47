@@ -142,6 +142,17 @@ if (pickup != noone) {
 					scrSpawnText(x, y, "+" + string(scr));
 				}
 			}
+			
+			//Start waves when picking up first thing
+			if (global.curScore == 0) {
+				with (objEnemySpawner) {
+					SpawnWave(0);
+				}
+				
+				var jan = instance_create_layer(room_width/2, room_height/2, "Pickups", objJan);
+				jan.image_xscale = 0;
+				jan.image_yscale = 0;
+			}
 	
 			//Increment score
 			global.curScore  += pickup.goalScore;
