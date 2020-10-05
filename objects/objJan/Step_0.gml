@@ -1,3 +1,8 @@
+if(objGameManager.state == game_states.over && !lastLaugh)
+{
+	LastLaugh();	
+}
+
 if(laughing)
 {	
 	alarm[0] = 1;

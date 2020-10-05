@@ -9,6 +9,7 @@ image_speed = 0;
 image_index = 4;
 laughing = false;
 laughFrames = 120;
+lastLaugh = false;
 
 #macro _WAVE 0
 #macro _TYPE 1
@@ -186,4 +187,14 @@ function SetFace(id, resetDelay)
 {
 	image_index = id;
 	alarm[10] = resetDelay;	
+}
+	
+function LastLaugh()
+{
+	alarm[1] = -1;
+	alarm[2] = -1;
+	alarm[3] = -1;
+	alarm[10] = -1;
+	alarm[0] = 1;
+	lastLaugh = true;
 }
