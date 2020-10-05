@@ -1,4 +1,4 @@
-pointsToSpawn = 4000;
+pointsToSpawn = 3500;
 scale = 0;
 maxScale = 0.2;
 bossActive = false;
@@ -151,6 +151,7 @@ function StartBoss()
 	alarm[2] = -1;
 	alarm[3] = -1;
 	alarm[10] = -1;
+	alarm[5] = 180;
 	
 	bossActive = true;
 	with (objEnemySpawner)
@@ -245,9 +246,12 @@ function TakeDamage()
 	SetFace(6, 60);
 	
 	scrJanDamageParticles(50);
+	scrFlashSpiralColor(1., 0.31, 0.35, 0.7);
+	scrFlashCircleColor(c_red);
 	scrSetShake(50, 60);
 	scrSetZoom(0.8);
 	audio_play_sound(choose(sndDamage, sndDamage2, sndDamage3, sndDamage4), 10, false);
+	objCircle.waves.noise = 40;
 	flash = 5;
 }
 
