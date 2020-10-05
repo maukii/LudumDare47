@@ -1,7 +1,7 @@
 audio_play_sound(sndBlop, 10, false);
 //audio_play_sound(sndCry, 10, false);
 
-objGameManager.alarm[0] = 360;
+objGameManager.alarm[0] = 480;
 
 var heartPiece = instance_create_layer(x, y, "Enemies", objHeartPiece);
 heartPiece.hsp = -1;
