@@ -190,30 +190,17 @@ ds_list_add(waves, [6, objEnemyCircle, 180]);
 ds_list_add(waves, [6, objEnemyCircle, 180]);
 ds_list_add(waves, [6, objEnemyCircle, 180]);
 ds_list_add(waves, [6, objEnemyCircle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-ds_list_add(waves, [6, objEnemyTriangle, 180]);
-
-
-
-
+ds_list_add(waves, [6, objEnemyTriangle, 200]);
+ds_list_add(waves, [6, objEnemyTriangle, 210]);
+ds_list_add(waves, [6, objEnemyTriangle, 220]);
+ds_list_add(waves, [6, objEnemyTriangle, 230]);
+ds_list_add(waves, [6, objEnemyTriangle, 240]);
+ds_list_add(waves, [6, objEnemyTriangle, 250]);
+ds_list_add(waves, [6, objEnemyTriangle, 260]);
+ds_list_add(waves, [6, objEnemyTriangle, 270]);
+ds_list_add(waves, [6, objEnemyTriangle, 280]);
+ds_list_add(waves, [6, objEnemyTriangle, 290]);
+ds_list_add(waves, [6, objEnemyTriangle, 300]);
 
 function SpawnWave(waveIndex)
 {		
