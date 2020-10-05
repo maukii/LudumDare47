@@ -3,13 +3,14 @@ movementSpeed = 1;
 maxMovementSpeed = 2;
 radius = 0;
 enemyDestroyDistance = 64;
+enemyDashDestroyDistance = 32;
 
 dash = {
 	cooldown : 0,
 	cooldownMax : 60,
 	dashing : false,
 	speed : 0,
-	speedMax : 10,
+	speedMax : 8,
 	dir : 0
 }
 

@@ -125,6 +125,9 @@ function StartBoss()
 	}
 	
 	laughing = true;
+	
+	objCircle.waves.amplitudeTarget = 20;
+	objCircle.waves.frequency = 2;
 }
 
 function SpawnWave(index)

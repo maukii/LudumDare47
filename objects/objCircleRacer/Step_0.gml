@@ -86,6 +86,43 @@ if (!dash.dashing) {
 		dash.dashing = false;
 		dashPitch = 1;
 		audio_play_sound(sndDashEnd, 10, false);
+		
+		//Destroy nearby enemies to avoid snapping into enemies
+			with (objEnemyCircle) {
+				if (distance_to_object(objCircleRacer) < other.enemyDashDestroyDistance) {
+					alarm[10] = 2;
+					scrFreeze(20);
+					
+					//Particles
+					scrCircleExplosion(50);
+					global.curScore += scr;
+					scrSpawnText(x, y, "+" + string(scr));
+				}
+			}
+			
+			with (objEnemyTriangle) {
+				if (distance_to_object(objCircleRacer) < other.enemyDashDestroyDistance) {
+					alarm[10] = 2;
+					scrFreeze(20);
+					
+					//Particles
+					scrTrongleExplosion(50);
+					global.curScore += scr;
+					scrSpawnText(x, y, "+" + string(scr));
+				}
+			}
+			
+			with (objEnemyBox) {
+				if (distance_to_object(objCircleRacer) < other.enemyDashDestroyDistance) {
+					alarm[10] = 2;
+					scrFreeze(20);
+					
+					//Particles
+					scrBoxExplosion(20);
+					global.curScore += scr;
+					scrSpawnText(x, y, "+" + string(scr));
+				}
+			}
 	}
 	
 	if (index > array_length(points)-1) index = 0;

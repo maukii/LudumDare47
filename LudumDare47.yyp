@@ -25,6 +25,7 @@
     {"id":{"name":"fntUISmall","path":"fonts/fntUISmall/fntUISmall.yy",},"order":1,},
     {"id":{"name":"objHeartPiece","path":"objects/objHeartPiece/objHeartPiece.yy",},"order":2,},
     {"id":{"name":"sprJan","path":"sprites/sprJan/sprJan.yy",},"order":0,},
+    {"id":{"name":"sndHeartExplosion","path":"sounds/sndHeartExplosion/sndHeartExplosion.yy",},"order":17,},
     {"id":{"name":"sndDamage4","path":"sounds/sndDamage4/sndDamage4.yy",},"order":10,},
     {"id":{"name":"sndDeathCry","path":"sounds/sndDeathCry/sndDeathCry.yy",},"order":5,},
     {"id":{"name":"sprPickups","path":"sprites/sprPickups/sprPickups.yy",},"order":17,},

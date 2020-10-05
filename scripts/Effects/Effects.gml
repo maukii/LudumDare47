@@ -116,6 +116,8 @@ function scrHeartExplosion () {
 	heartPiece = instance_create_layer(x, y, "Enemies", objHeartPiece);
 	heartPiece.hsp = 1;
 	heartPiece.image_index = 1;
+	if (!audio_is_playing(sndHeartExplosion)) audio_play_sound(sndHeartExplosion, 10, false);
+	scrFreeze(400);
 }
 
 
