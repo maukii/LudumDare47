@@ -159,6 +159,15 @@ function SpecialAttack()
 	wavesComplited = 0;
 	instance_create_layer(screenCenterX, screenCenterY, "Enemies", objEnemyHeart);
 	SetFace(0, 60);
+	
+	if(objCircleRacer.hp < 3 && !instance_exists(objHealth))
+	{
+		var index = objCircleRacer.index;
+		var point = index + irandom_range(90, 120) * choose(1, -1);
+		if (point > 359) point = abs(point - 359);
+		if (point < 0) point = 359 + point;
+		scrSpawnHealth(index);
+	}
 }
 	
 function TakeDamage()
