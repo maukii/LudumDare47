@@ -111,3 +111,5 @@ if (destroy) {
 	
 	scrSetShake(40, 10);
 }
+
+flash = scrApproach(flash, 0, 1);

@@ -5,6 +5,8 @@ bossActive = false;
 bossHealth = 5;
 destroy = false;
 
+flash = 0;
+
 image_speed = 0;
 image_index = 4;
 laughing = false;
@@ -244,6 +246,7 @@ function TakeDamage()
 	scrSetShake(50, 60);
 	scrSetZoom(0.8);
 	audio_play_sound(choose(sndDamage, sndDamage2, sndDamage3, sndDamage4), 10, false);
+	flash = 5;
 }
 
 function SetFace(id, resetDelay)

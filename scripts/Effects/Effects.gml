@@ -6,6 +6,8 @@ global.colOrange = make_color_rgb(255, 61, 17);
 global.colMagenta = make_color_rgb(255, 0, 254);
 global.colPurple = make_color_rgb(64, 49, 142);
 
+global.textHighlightColor = global.colPurple;
+
 //Init particles
 global.prtSys = part_system_create();
 global.ambientPrtSys = part_system_create();

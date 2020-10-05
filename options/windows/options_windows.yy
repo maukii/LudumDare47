@@ -1,10 +1,10 @@
 {
   "option_windows_display_name": "JANTOR",
-  "option_windows_executable_name": "${project_name}.exe",
+  "option_windows_executable_name": "JANTOR",
   "option_windows_version": "1.0.0.0",
   "option_windows_company_info": "OULUGANG",
   "option_windows_product_info": "JANTOR",
-  "option_windows_copyright_info": "",
+  "option_windows_copyright_info": "WTFPL",
   "option_windows_description_info": "DEFEAT THE JANTOR",
   "option_windows_display_cursor": true,
   "option_windows_icon": "${project_dir}\\options\\windows\\icons\\icon.ico",

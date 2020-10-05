@@ -318,6 +318,7 @@ if (pickup != noone) {
 				jan.image_yscale = 0;
 				
 				objGameManager.state = game_states.playing;
+				objGameManager.alarm[1] = 180;
 			}
 	
 			//Increment score
