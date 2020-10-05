@@ -81,8 +81,12 @@ if (!dash.dashing) {
 	}
 } else if (dash.dashing) {
 	index += dash.dir * dash.speed;
-	dash.speed = scrApproach(dash.speed, movementSpeed, 0.5);
-	if (dash.speed == movementSpeed) dash.dashing = false;
+	dash.speed = scrApproach(dash.speed, movementSpeed, 1);
+	if (dash.speed == movementSpeed) {
+		dash.dashing = false;
+		dashPitch = 1;
+		audio_play_sound(sndDashEnd, 10, false);
+	}
 	
 	if (index > array_length(points)-1) index = 0;
 	if (index < 0) index = array_length(points)-1;
@@ -134,17 +138,25 @@ if (enemy != noone) {
 		instance_destroy(enemy);
 		scrFreeze(100);
 		audio_play_sound(sndDashHit, 10, false);
+		audio_play_sound(sndDashHitDing, 10, false);
+		audio_sound_pitch(sndDashHitDing, dashPitch);
+		dashPitch += 0.1;
 	} else {
 		instance_destroy(enemy);
 		
-		scrSetShake(50, 10);
-		scrSetRotation(10, true);
-		scrSetZoom(0.8);
-		scrFreeze(200);
-		objCircle.waves.noise = 20;
-		audio_play_sound(sndHurt, 100, false);
-		scrSetSpiralColor(0.5, 0., 0.);
-		scrSetSpiralSpeed(3);
+		if (iframes == 0) {
+			scrSetShake(50, 10);
+			scrSetRotation(10, true);
+			scrSetZoom(0.8);
+			scrFreeze(200);
+			objCircle.waves.noise = 20;
+			audio_play_sound(sndHurt, 100, false);
+			scrFlashSpiralColor(1.0, 0.24, 0.07, 0.5);
+			scrSetSpiralSpeed(3);
+			scrFlashCircleColor(c_red);
+		}
+		
+		audio_play_sound(sndDashHit, 10, false);
 
 		if (hp > 1 && iframes == 0) {
 			hp--;
@@ -152,7 +164,30 @@ if (enemy != noone) {
 			flash = 3;
 			
 			//Destroy all enemies onscreen
-			with (objEnemyBase) alarm[10] = 2;
+			with (objEnemyBase) {
+				switch (enemy.object_index) {
+			case objEnemyCircle:
+				//Particles
+				scrCircleExplosion(50);
+			break;
+			
+			case objEnemyTriangle:
+				//Particles
+				scrTrongleExplosion(50);
+			break;
+			
+			case objEnemyBox:
+				//Particles
+				scrBoxExplosion(20);
+			break;
+			case objEnemyHeart:
+				//Particles
+				scrCircleExplosion(50);
+			break;
+		}
+				
+				alarm[10] = 2;
+			}
 		} else if (iframes == 0){
 			objGameManager.state = game_states.over;
 			scrSetShake(50, 30);
@@ -185,7 +220,7 @@ if (pickup != noone) {
 			audio_sound_pitch(sndScoreGet, scorePitch);
 			audio_play_sound(sndScoreGet, 10, false);
 			scorePitch += 0.01;
-			scrSetSpiralColor(0., 0.5, 0.5);
+			scrFlashSpiralColor(1.0, 1.0, 0., 0.5);
 	
 			//Destroy nearby enemies to avoid snapping into enemies
 			with (objEnemyCircle) {
@@ -273,7 +308,7 @@ if (pickup != noone) {
 			objJan.scale -= .1;
 			scrSpawnText(pickup.x, pickup.y, "UNTANGLE");
 			audio_play_sound(sndUntangle, 10, false);
-			scrSetSpiralColor(0.5, 0.5, 0.);
+			scrFlashSpiralColor(1., 0.31, 0.35, 0.5);
 			#endregion
 		break;
 		
@@ -282,7 +317,7 @@ if (pickup != noone) {
 			scrFlash(0.2);
 			scrSpawnText(pickup.x, pickup.y, "+1 HP");
 			audio_play_sound(sndHPGet, 10, false);
-			scrSetSpiralColor(0., 0.5, 0.);
+			scrFlashSpiralColor(1., 0.31, 0.35, 0.5);
 		break;
 	}
 	

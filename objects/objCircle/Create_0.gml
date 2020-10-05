@@ -26,6 +26,9 @@ waves = {
 	noiseTarget : 0
 }
 
+circleColor = c_white;
+circleColorTarget = c_white;
+
 var noiseAmplitude = 0;
 
 for(var i = 0; i < size; i++) {

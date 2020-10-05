@@ -15,6 +15,4 @@ for(var i = 0; i < size; i++) {
 //Blend amplitude seamlessly
 waves.amplitude = scrApproach(waves.amplitude, waves.amplitudeTarget, 0.1);
 waves.noise = scrApproach(waves.noise, waves.noiseTarget, 1);
-
-//Ambient particles
-if (random(1) > 0.8 ) part_particles_create(global.ambientPrtSys, center.x, center.y, global.ambientPart, 1);
+circleColor = merge_color(circleColor, circleColorTarget, 0.05);

@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 0.1,
+  "volume": 0.2,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "sndHurt.wav",
-  "duration": 2.885,
+  "soundFile": "sndDashHitDing.wav",
+  "duration": 0.501349,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sndHurt",
+  "name": "sndDashHitDing",
   "tags": [],
   "resourceType": "GMSound",
 }

@@ -13,5 +13,5 @@ for(var i = 0; i < size; i++)
 		prevPoints.y = animatedPoints[i-1][1];
 	}
 	
-	draw_line_width(animatedPoints[i][0], animatedPoints[i][1], prevPoints.x, prevPoints.y, 2);
+	draw_line_width_color(animatedPoints[i][0], animatedPoints[i][1], prevPoints.x, prevPoints.y, 2, circleColor, circleColor);
 }

@@ -81,3 +81,7 @@ if(spawningWave)
 		}
 	}
 }
+
+if (bossActive) {
+	scrSetSpiralColor(scrWave(0.1, 0.3, 2, 0), 0., 0.);
+}

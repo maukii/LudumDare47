@@ -96,7 +96,27 @@ function StartBoss()
 	
 	with (objEnemyBase)
 	{
-		alarm[10] = 2;	
+		alarm[10] = 2;
+		switch (object_index) {
+			case objEnemyCircle:
+				//Particles
+				scrCircleExplosion(50);
+			break;
+			
+			case objEnemyTriangle:
+				//Particles
+				scrTrongleExplosion(50);
+			break;
+			
+			case objEnemyBox:
+				//Particles
+				scrBoxExplosion(20);
+			break;
+			case objEnemyHeart:
+				//Particles
+				scrCircleExplosion(50);
+			break;
+		}
 	}
 	
 	with(objPickup)

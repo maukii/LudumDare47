@@ -9,7 +9,7 @@ dash = {
 	cooldownMax : 60,
 	dashing : false,
 	speed : 0,
-	speedMax : 8,
+	speedMax : 10,
 	dir : 0
 }
 
@@ -26,3 +26,4 @@ lastMouseX = device_mouse_raw_x(0);
 lastMouseY = device_mouse_raw_y(0);
 
 scorePitch = 1;
+dashPitch = 1;

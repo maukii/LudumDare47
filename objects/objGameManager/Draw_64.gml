@@ -4,7 +4,7 @@ switch (state) {
 		draw_set_valign(fa_center);
 		draw_set_font(fntUISmall);
 		var txt = "MOVE PLAYER BY\nMOVING THE CURSOR\nOR BY\nPRESSING A AND D\n\nDASH BY LEFT CLICKING\nOR PRESSING SPACE";
-		var c = c_red;
+		var c = global.textHighlightColor;
 		
 		draw_text_color(room_width/2 + 1, room_height/2 + 1, txt, c, c, c, c, 1);
 		
@@ -28,19 +28,18 @@ switch (state) {
 		draw_set_font(fntUIBig);
 		
 		var txt = "GAME OVER";
-		var c = c_red;
+		var c = global.textHighlightColor;
 		
 		draw_text_color(room_width/2+1, 32+1, txt, c, c, c, c, 1);
 		draw_text(room_width/2, 32, txt);
 		
 		draw_set_font(fntUISmall);
 		draw_set_valign(fa_top);
-		var height = font_get_size(fntUISmall);
 		
 		txt = "SCORE: " + string(global.curScore) + "\n\nR TO RESTART";
-		c = c_red;
+		c = global.textHighlightColor;
 		
-		draw_text_color(room_width/2+1, 32 + height * 3+1, txt, c, c, c, c, 1);
-		draw_text(room_width/2, 32 + height * 3, txt);
+		draw_text_color(room_width/2+1, room_height/2+1, txt, c, c, c, c, 1);
+		draw_text(room_width/2, room_height/2, txt);
 	break;
 }
