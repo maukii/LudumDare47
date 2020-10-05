@@ -29,3 +29,7 @@ lastMouseY = device_mouse_raw_y(0);
 
 scorePitch = 1;
 dashPitch = 1;
+
+image_xscale = 0.05;
+image_yscale = 0.05;
+image_speed = 0;

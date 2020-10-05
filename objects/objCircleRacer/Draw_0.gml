@@ -1,10 +1,11 @@
 //Draw boi
-if (flash > 0) color = c_white;
+
 
 if (iframes == 0) {
-	draw_circle_color(x, y, radius, color, color, false);
+	draw_self();
+	if (!dash.dashing) image_index = 0;
 } else if (scrWave(0, 1, 0.2, 0) > 0.5){
-	draw_circle_color(x, y, radius, color, color, false);
+	draw_self();
 }
 
 if (iframes > dashIFramesMax) {

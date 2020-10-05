@@ -9,5 +9,7 @@ if (!audio_is_playing(sndLaunchCircle)) audio_play_sound(sndLaunchCircle, 10, fa
 
 image_angle = irandom(359);
 rotSpeed = 5;
-image_xscale = 0.05;
-image_yscale = 0.05;
+size = 0;
+maxSize = 0.05;
+image_xscale = 0;
+image_yscale = 0;

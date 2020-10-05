@@ -67,6 +67,7 @@ if (!dash.dashing) {
 		dash.cooldown = dash.cooldownMax;
 		dash.speed = dash.speedMax;
 		radius = 12;
+		image_index = 2;
 		
 		//FX
 		scrSetShake(20, 10);
@@ -87,6 +88,7 @@ if (!dash.dashing) {
 		dashPitch = 1;
 		iframes = dashIFramesMax;
 		audio_play_sound(sndDashEnd, 10, false);
+		image_index = 1;
 		
 		//Destroy nearby enemies to avoid snapping into enemies
 			with (objEnemyCircle) {
@@ -195,6 +197,7 @@ if (enemy != noone) {
 		}
 		
 		audio_play_sound(sndDashHit, 10, false);
+		image_index = 1;
 
 		if (hp > 1 && iframes == 0) {
 			hp--;
@@ -365,6 +368,7 @@ if (pickup != noone) {
 
 //Animation
 radius = lerp(radius, 6, 0.1);
+image_angle = scrWave(-10, 10, 2, 0);
 
 //Countdown iframes
 iframes = scrApproach(iframes, 0, 1);
