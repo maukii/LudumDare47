@@ -109,6 +109,15 @@ function scrBoxExplosion (amount) {
 	if (!audio_is_playing(sndBoxExplosion)) audio_play_sound(sndBoxExplosion, 10, false);
 }
 
+function scrHeartExplosion () {
+	var heartPiece = instance_create_layer(x, y, "Enemies", objHeartPiece);
+	heartPiece.hsp = -1;
+
+	heartPiece = instance_create_layer(x, y, "Enemies", objHeartPiece);
+	heartPiece.hsp = 1;
+	heartPiece.image_index = 1;
+}
+
 
 function scrSpawnText(xx, yy, text) {
 	var t = instance_create_layer(xx, yy, "Instances", objFloatingText);

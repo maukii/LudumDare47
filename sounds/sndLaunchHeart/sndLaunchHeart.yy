@@ -1,6 +1,6 @@
 {
   "compression": 0,
-  "volume": 0.05,
+  "volume": 0.1,
   "preload": false,
   "bitRate": 128,
   "sampleRate": 44100,
@@ -10,14 +10,14 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "sndDashEnd.wav",
-  "duration": 0.212007,
+  "soundFile": "sndLaunchHeart.wav",
+  "duration": 1.28271,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sndDashEnd",
+  "name": "sndLaunchHeart",
   "tags": [],
   "resourceType": "GMSound",
 }
