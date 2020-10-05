@@ -217,7 +217,7 @@ function SpecialAttack()
 	instance_create_layer(screenCenterX, screenCenterY, "Enemies", objEnemyHeart);
 	SetFace(0, 60);
 	
-	if(!instance_exists(objHealth))
+	if(!instance_exists(objHealth) && instance_exists(objCircleRacer))
 	{
 		if (objCircleRacer.hp < 3) {
 			var index = objCircleRacer.index;
