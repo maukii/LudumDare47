@@ -13,7 +13,7 @@ global.ambientPrtSys = part_system_create();
 //Player particles
 global.playerPart = part_type_create();
 var p = global.playerPart;
-part_type_color1(p, global.colOrange);
+part_type_color1(p, global.colPurple);
 part_type_speed(p, 0.5, 1, -0.01, 0);
 part_type_shape(p, pt_shape_disk);
 part_type_life(p, 60, 60);
@@ -21,7 +21,7 @@ part_type_size(p, 0.02, 0.1, -0.001, 0);
 
 global.playerDashPart = part_type_create();
 p = global.playerDashPart;
-part_type_color1(p, global.colOrange);
+part_type_color1(p, global.colPurple);
 part_type_speed(p, 1, 2, -0.01, 0);
 part_type_shape(p, pt_shape_disk);
 part_type_life(p, 100, 120);
@@ -29,7 +29,7 @@ part_type_size(p, 0.1, 0.2, -0.002, 0);
 
 global.playerDashCooldownPart = part_type_create();
 p = global.playerDashCooldownPart;
-part_type_color1(p, global.colOrange);
+part_type_color1(p, global.colPurple);
 part_type_speed(p, 2, 4, -0.01, 0);
 part_type_shape(p, pt_shape_disk);
 part_type_life(p, 30, 60);
@@ -78,7 +78,7 @@ part_type_orientation(p, 0, 0, 0, 0, true);
 //Box spawning
 global.boxEnemyPart = part_type_create();
 p = global.boxEnemyPart;
-part_type_color1(p, global.colOrange);
+part_type_color1(p, global.colPink);
 part_type_speed(p, 0.5, 1, -0.01, 0);
 part_type_shape(p, pt_shape_square);
 part_type_life(p, 30, 30);
