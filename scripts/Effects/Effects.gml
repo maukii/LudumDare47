@@ -13,7 +13,7 @@ global.ambientPrtSys = part_system_create();
 //Player particles
 global.playerPart = part_type_create();
 var p = global.playerPart;
-part_type_color1(p, c_lime);
+part_type_color1(p, global.colOrange);
 part_type_speed(p, 0.5, 1, -0.01, 0);
 part_type_shape(p, pt_shape_disk);
 part_type_life(p, 60, 60);
@@ -21,7 +21,7 @@ part_type_size(p, 0.02, 0.1, -0.001, 0);
 
 global.playerDashPart = part_type_create();
 p = global.playerDashPart;
-part_type_color1(p, c_lime);
+part_type_color1(p, global.colOrange);
 part_type_speed(p, 1, 2, -0.01, 0);
 part_type_shape(p, pt_shape_disk);
 part_type_life(p, 100, 120);
@@ -76,6 +76,16 @@ part_type_life(p, 30, 30);
 part_type_size(p, 0.02, 0.06, -0.001, 0);
 part_type_direction(p, 0, 359, 5, 0);
 
+//Jan explosion
+global.janEnemyExplosionPart = part_type_create();
+p = global.janEnemyExplosionPart;
+part_type_color1(p, global.colPink);
+part_type_speed(p, 4, 8, -0.01, 0);
+part_type_shape(p, pt_shape_disk);
+part_type_life(p, 80, 120);
+part_type_size(p, 0.2, 0.4, -0.003, 0);
+part_type_gravity(p, 0.01 ,270);
+
 //Ambient particles
 global.ambientPart = part_type_create();
 var p = global.ambientPart;
@@ -118,6 +128,10 @@ function scrHeartExplosion () {
 	heartPiece.image_index = 1;
 	if (!audio_is_playing(sndHeartExplosion)) audio_play_sound(sndHeartExplosion, 10, false);
 	scrFreeze(400);
+}
+
+function scrJanDamageParticles (amount) {
+	
 }
 
 

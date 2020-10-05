@@ -21,10 +21,10 @@ height = room_height * 0.5;
 
 alarm[0] = launchDelay;
 
-scr = 5;
+scr = 20;
 
 size = 0;
-maxSize = 8;
+maxSize = 0.05;
 
-image_xscale = 0.05;
-image_yscale = 0.05;
+image_xscale = 0;
+image_yscale = 0;

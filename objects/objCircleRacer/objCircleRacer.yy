@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprHitBox",
-    "path": "sprites/sprHitBox/sprHitBox.yy",
+    "name": "sprPlayer",
+    "path": "sprites/sprPlayer/sprPlayer.yy",
   },
   "solid": false,
   "visible": true,

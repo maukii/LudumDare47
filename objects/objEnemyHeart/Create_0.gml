@@ -24,7 +24,9 @@ x = width + lengthdir_x(distanceFromCenter, dir);
 y = height + lengthdir_y(distanceFromCenter, dir);
 
 image_angle = 0;
-image_xscale = 0.05;
-image_yscale = 0.05;
+size = 0;
+maxSize = 0.05;
+image_xscale = 0;
+image_yscale = 0;
 
 audio_play_sound(sndLaunchHeart, 10, false);

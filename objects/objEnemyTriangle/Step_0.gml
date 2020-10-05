@@ -33,5 +33,7 @@ part_type_direction(global.trongleEnemyPart, dir + 160, dir + 200, 0, 0);
 if (launched) part_particles_create(global.prtSys, x, y, global.trongleEnemyPart, 1);
 
 //Animation
-size = lerp(size, maxSize, 0.1);
+size = scrApproach(size, maxSize, 0.001);
+image_xscale = size;
+image_yscale = size;
 image_angle = dir - 90;

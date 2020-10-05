@@ -12,7 +12,9 @@ if (y < -sprite_height || y > room_height + sprite_height) {
 }
 
 //Animation
-radius = lerp(radius, 8, 0.02);
+size = scrApproach(size, maxSize, 0.001);
+image_xscale = size;
+image_yscale = size;
 image_angle += rotSpeed;
 
 //Particles
