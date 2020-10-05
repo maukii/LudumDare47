@@ -39,6 +39,8 @@ if(spawningWave)
 					instance_create_layer(screenCenterX, screenCenterY, layer, next[_TYPE]);
 				break;
 			}
+			
+			scrSetShake(10, 10);
 		}
 	}
 	

@@ -30,3 +30,5 @@ image_xscale = 0;
 image_yscale = 0;
 
 audio_play_sound(sndLaunchHeart, 10, false);
+
+if (!audio_is_playing(sndMuah)) audio_play_sound(sndMuah, 10, false);

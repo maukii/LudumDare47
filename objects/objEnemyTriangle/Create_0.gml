@@ -28,3 +28,5 @@ maxSize = 0.05;
 
 image_xscale = 0;
 image_yscale = 0;
+
+if (!audio_is_playing(sndThink)) audio_play_sound(sndThink, 10, false);

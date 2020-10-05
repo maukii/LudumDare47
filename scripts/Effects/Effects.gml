@@ -90,10 +90,23 @@ global.janEnemyExplosionPart = part_type_create();
 p = global.janEnemyExplosionPart;
 part_type_color1(p, global.colPink);
 part_type_speed(p, 4, 8, -0.01, 0);
-part_type_shape(p, pt_shape_disk);
+part_type_sprite(p, sprParticles, false, false, true);
+part_type_life(p, 80, 120);
+part_type_size(p, 0.2, 0.4, -0.003, 0);
+part_type_gravity(p, 0.001 ,270);
+part_type_direction(p, 0, 359, 1, 0);
+
+//Jan damage
+global.janEnemyDamagePart = part_type_create();
+p = global.janEnemyDamagePart;
+part_type_color1(p, global.colPurple);
+part_type_speed(p, 2, 4, -0.01, 0);
+part_type_sprite(p, sprTear, false, false, true);
 part_type_life(p, 80, 120);
 part_type_size(p, 0.2, 0.4, -0.003, 0);
 part_type_gravity(p, 0.01 ,270);
+part_type_direction(p, 180, 359, 1, 0);
+part_type_orientation(p, 0, 0, 0, 0, true);
 
 //Ambient particles
 global.ambientPart = part_type_create();
@@ -140,8 +153,13 @@ function scrHeartExplosion () {
 	scrFreeze(400);
 }
 
+function scrJanDeathParticles (amount) {
+	part_type_color1(global.janEnemyExplosionPart, make_color_hsv(irandom(255), 255, 255));
+	part_particles_create(global.ambientPrtSys, x, y, global.janEnemyExplosionPart, amount);
+}
+
 function scrJanDamageParticles (amount) {
-	
+	part_particles_create(global.ambientPrtSys, x, y, global.janEnemyDamagePart, amount);
 }
 
 

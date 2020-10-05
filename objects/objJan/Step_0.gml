@@ -6,10 +6,10 @@ if(laughing)
 
 image_angle = scrWave(-10, 10, 4, 0);
 
-scale = clamp(scale + 0.05, 0, maxScale);
+if (!destroy) scale = clamp(scale + 0.05, 0, maxScale);
 
-image_xscale = scale + scrWave(-0.1, 0.1, 3, 0);
-image_yscale = scale + scrWave(-0.1, 0.1, 5, 0);
+image_xscale = scale + scrWave(-0.05, 0.05, 3, 0);
+image_yscale = scale + scrWave(-0.05, 0.05, 5, 0);
 
 x = xstart + scrWave(-5, 5, 5, 0);
 y = ystart + scrWave(-5, 5, 3, 2);
@@ -53,6 +53,8 @@ if(spawningWave)
 					instance_create_layer(screenCenterX, screenCenterY, "Enemies", next[_TYPE]);
 				break;
 			}
+			
+			scrSetShake(10, 10);
 		}
 	}
 	
@@ -86,4 +88,21 @@ if(spawningWave)
 
 if (bossActive) {
 	scrSetSpiralColor(scrWave(0.1, 0.3, 2, 0), 0., 0.);
+}
+
+if (destroy) {
+	image_blend = make_color_hsv(scrWave(0, 255, 2, 0), 255, 255);
+	x = lerp(x, x + random_range(-20, 20), 0.2);
+	y = lerp(y, y + random_range(-20, 20), 0.2);
+	
+	image_xscale = scale + scrWave(-0.1, 0.2, 0.6, 0);
+	image_yscale = scale + scrWave(-0.1, 0.2, 1, 0);
+	
+	scale = scrApproach(scale, 0, 0.001);
+	
+	scrJanDeathParticles(10);
+	scrFlashSpiralColor(scrWave(0, 1, 0.5, 0), scrWave(0, 1, 0.5, 0.1), scrWave(0, 1, 0.5, 0.3), 0.5);
+	scrFlashCircleColor(make_color_hsv(scrWave(0, 255, 1.2, 0), 255, 255));
+	
+	scrSetShake(40, 10);
 }

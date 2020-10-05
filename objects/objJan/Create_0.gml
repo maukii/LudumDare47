@@ -3,6 +3,11 @@ scale = 0;
 maxScale = 0.2;
 bossActive = false;
 bossHealth = 3;
+destroy = false;
+
+//destroy = true;
+//audio_play_sound(sndDeathCry, 10, false);
+//alarm[4] = 300;
 
 image_speed = 0;
 image_index = 4;
@@ -165,6 +170,9 @@ function TakeDamage()
 	if(bossHealth <= 0)
 	{
 		spawningWave = false;
+		destroy = true;
+		audio_play_sound(sndDeathCry, 10, false);
+		alarm[4] = 300;
 	}
 	
 	delayBetweenWaves -= 20;
@@ -172,6 +180,9 @@ function TakeDamage()
 	alarm[3] = 1;
 	SetFace(6, 60);
 	
+	scrJanDamageParticles(50);
+	scrSetShake(50, 60);
+	scrSetZoom(0.8);
 	audio_play_sound(choose(sndDamage, sndDamage2, sndDamage3, sndDamage4), 10, false);
 }
 

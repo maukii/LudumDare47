@@ -17,7 +17,7 @@ dash = {
 color = c_lime;
 
 hp = 3;
-iframes = 0;
+iframes = 180;
 dashIFramesMax = 30;
 iframesMax = 180;
 cooldownPart = false;
