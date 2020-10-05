@@ -321,7 +321,7 @@ if (pickup != noone) {
 			
 			//Maybe spawn untangle object when shape is fucked up
 			if (objCircle.waves.shape >= 5 && !instance_exists(objUntangle) && random(1) + objCircle.waves.shape / 50 > 0.5) {
-				point = index + 180 * choose(1, -1);
+				point = index + 160 * choose(1, -1);
 				if (point > 359) point = abs(point - 359);
 				if (point < 0) point = 359 + point;
 				
@@ -329,8 +329,8 @@ if (pickup != noone) {
 			}
 			
 			//Maybe spawn health when player is low
-			if (!instance_exists(objHealth) && random(2.5 / hp) > 1) {
-				point = index + 180 * choose(1, -1);
+			if (!instance_exists(objHealth) && random(2.1 / hp) > 1) {
+				point = index + 200 * choose(1, -1);
 				if (point > 359) point = abs(point - 359);
 				if (point < 0) point = 359 + point;
 				scrSpawnHealth(point);
@@ -348,7 +348,6 @@ if (pickup != noone) {
 			//FX
 			scrFlash(0.2);
 			scrSetShake(20, 10);
-			objJan.scale -= .1;
 			scrSpawnText(pickup.x, pickup.y, "UNTANGLE");
 			audio_play_sound(sndUntangle, 10, false);
 			scrFlashSpiralColor(1., 0.31, 0.35, 0.5);

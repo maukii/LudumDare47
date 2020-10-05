@@ -6,6 +6,11 @@ enum game_states {
 
 state = game_states.start;
 overAlpha = 0;
+
+scoreTextScale = 1;
+scoreTextRot = 0;
+jankScore = 0;
+
 global.textHighlightColor = global.colPurple;
 global.curScore = 0;
 

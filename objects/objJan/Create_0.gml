@@ -1,13 +1,9 @@
-pointsToSpawn = 200;
+pointsToSpawn = 3000;
 scale = 0;
 maxScale = 0.2;
 bossActive = false;
 bossHealth = 3;
 destroy = false;
-
-//destroy = true;
-//audio_play_sound(sndDeathCry, 10, false);
-//alarm[4] = 300;
 
 image_speed = 0;
 image_index = 4;
