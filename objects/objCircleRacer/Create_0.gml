@@ -3,7 +3,7 @@ movementSpeed = 1;
 maxMovementSpeed = 2;
 radius = 0;
 enemyDestroyDistance = 64;
-enemyDashDestroyDistance = 32;
+enemyDashDestroyDistance = 16;
 
 dash = {
 	cooldown : 0,
@@ -18,6 +18,7 @@ color = c_lime;
 
 hp = 3;
 iframes = 0;
+dashIFramesMax = 30;
 iframesMax = 180;
 
 flash = 0;

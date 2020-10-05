@@ -85,6 +85,7 @@ if (!dash.dashing) {
 	if (dash.speed == movementSpeed) {
 		dash.dashing = false;
 		dashPitch = 1;
+		iframes = dashIFramesMax;
 		audio_play_sound(sndDashEnd, 10, false);
 		
 		//Destroy nearby enemies to avoid snapping into enemies
