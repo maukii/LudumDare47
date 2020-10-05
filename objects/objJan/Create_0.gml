@@ -62,9 +62,9 @@ ds_list_add(waves, [2, objEnemyBox, 10]);
 ds_list_add(waves, [2, objEnemyBox, 10]);
 ds_list_add(waves, [2, objEnemyBox, 10]);
 ds_list_add(waves, [2, objEnemyBox, 10]);
-ds_list_add(waves, [2, objEnemyTriangle, 10]);
-ds_list_add(waves, [2, objEnemyTriangle, 50]);
-ds_list_add(waves, [2, objEnemyTriangle, 100]);
+ds_list_add(waves, [2, objEnemyTriangle, 1]);
+ds_list_add(waves, [2, objEnemyTriangle, 130]);
+ds_list_add(waves, [2, objEnemyTriangle, 262]);
 
 ds_list_add(waves, [3, objEnemyBox, 50]);
 ds_list_add(waves, [3, objEnemyBox, 50]);
@@ -88,6 +88,12 @@ ds_list_add(waves, [3, objEnemyCircle, 10]);
 
 function StartBoss()
 {
+	alarm[0] = -1;
+	alarm[1] = -1;
+	alarm[2] = -1;
+	alarm[3] = -1;
+	alarm[10] = -1;
+	
 	bossActive = true;
 	with (objEnemySpawner)
 	{
@@ -143,7 +149,7 @@ function SpawnWave(index)
 		}
 	}
 	
-	SetFace(2, 60);
+	SetFace(2, 30);
 }
 	
 function SpecialAttack()

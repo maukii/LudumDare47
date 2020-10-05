@@ -1,2 +1,10 @@
 /// @description ShootBullet
-SetFace(0, 30);
+
+if(bossActive)
+{
+	SetFace(9, 30);
+}
+else
+{
+	SetFace(8, 30);	
+}

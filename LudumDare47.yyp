@@ -59,6 +59,7 @@
     {"id":{"name":"sndDashHitDing","path":"sounds/sndDashHitDing/sndDashHitDing.yy",},"order":12,},
     {"id":{"name":"sprHitBox","path":"sprites/sprHitBox/sprHitBox.yy",},"order":5,},
     {"id":{"name":"objSpiral","path":"objects/objSpiral/objSpiral.yy",},"order":1,},
+    {"id":{"name":"sprJanSpit","path":"sprites/sprJanSpit/sprJanSpit.yy",},"order":26,},
     {"id":{"name":"sprJanNew","path":"sprites/sprJanNew/sprJanNew.yy",},"order":14,},
     {"id":{"name":"objPickup","path":"objects/objPickup/objPickup.yy",},"order":0,},
     {"id":{"name":"sndLaunchHeart","path":"sounds/sndLaunchHeart/sndLaunchHeart.yy",},"order":14,},
