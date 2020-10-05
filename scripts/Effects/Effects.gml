@@ -27,6 +27,15 @@ part_type_shape(p, pt_shape_disk);
 part_type_life(p, 100, 120);
 part_type_size(p, 0.1, 0.2, -0.002, 0);
 
+global.playerDashCooldownPart = part_type_create();
+p = global.playerDashCooldownPart;
+part_type_color1(p, global.colOrange);
+part_type_speed(p, 2, 4, -0.01, 0);
+part_type_shape(p, pt_shape_disk);
+part_type_life(p, 30, 60);
+part_type_size(p, 0.1, 0.2, -0.002, 0);
+part_type_direction(p, 0, 359, 5, 0);
+
 //Enemy particles
 //Circle
 global.circleEnemyPart = part_type_create();
@@ -91,10 +100,11 @@ global.ambientPart = part_type_create();
 var p = global.ambientPart;
 part_type_color1(p, c_white);
 part_type_speed(p, 0, 0, 0.01, 0);
-part_type_shape(p, pt_shape_disk);
+part_type_sprite(p, sprParticles, false, false, true);
 part_type_life(p, 720, 720);
 part_type_size(p, 0, 0, 0.001, 0);
 part_type_direction(p, 0, 359, 1, 0);
+part_type_orientation(p, 0, 0, 5, 2, false);
 part_type_alpha1(p, 0.1);
 part_type_blend(p, false);
 

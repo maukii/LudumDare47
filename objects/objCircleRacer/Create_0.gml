@@ -20,7 +20,7 @@ hp = 3;
 iframes = 0;
 dashIFramesMax = 30;
 iframesMax = 180;
-
+cooldownPart = false;
 flash = 0;
 
 usingMouse = false;

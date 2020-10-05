@@ -57,6 +57,7 @@ if (!dash.dashing) {
 	
 	if ((keyboard_check_pressed(vk_space) || mouse_check_button_pressed(mb_left)) && dash.cooldown == 0) {
 		dash.dashing = true;
+		cooldownPart = true;
 				
 		if(prevIndex < index)
 			move = 1;
@@ -83,11 +84,11 @@ if (!dash.dashing) {
 } else if (dash.dashing) {
 	index += dash.dir * dash.speed;
 	dash.speed = scrApproach(dash.speed, movementSpeed, 1);
+	
 	if (dash.speed == movementSpeed) {
 		dash.dashing = false;
 		dashPitch = 1;
 		iframes = dashIFramesMax;
-		audio_play_sound(sndDashEnd, 10, false);
 		image_index = 1;
 		
 		//Destroy nearby enemies to avoid snapping into enemies
@@ -194,6 +195,7 @@ if (enemy != noone) {
 			scrFlashSpiralColor(1.0, 0.24, 0.07, 0.5);
 			scrSetSpiralSpeed(3);
 			scrFlashCircleColor(c_red);
+			flash = 5;
 		}
 		
 		audio_play_sound(sndDashHit, 10, false);
@@ -390,4 +392,11 @@ if (dash.dashing) {
 		part_type_direction(global.playerDashPart, moveDir - 20, moveDir + 20, 1, 5);
 		part_particles_create(global.prtSys, x, y, global.playerDashPart, 1);
 	}
+}
+
+if (cooldownPart && dash.cooldown == 0) {
+	part_particles_create(global.prtSys, x, y, global.playerDashCooldownPart, 20);
+	audio_play_sound(sndDashEnd, 10, false);
+	flash = 5;
+	cooldownPart = false;
 }
