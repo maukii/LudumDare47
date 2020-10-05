@@ -183,6 +183,11 @@ if (enemy != noone) {
 		audio_sound_pitch(sndDashHitDing, dashPitch);
 		dashPitch += 0.1;
 	} else {
+		
+		if (enemy.object_index == objEnemyHeart && iframes != 0) {
+			with (objJan) TakeDamage();
+		}
+		
 		instance_destroy(enemy);
 		
 		if (iframes == 0) {
@@ -231,7 +236,7 @@ if (enemy != noone) {
 				
 				alarm[10] = 2;
 			}
-		} else if (iframes == 0){
+		} else if (iframes == 0) {
 			objGameManager.state = game_states.over;
 			scrSetShake(50, 30);
 
@@ -317,11 +322,11 @@ if (pickup != noone) {
 	
 			//Increment score
 			global.curScore  += pickup.goalScore;
-			scrSpawnText(pickup.x, pickup.y, "+" + string(pickup.goalScore));
+			scrSpawnText(pickup.x, pickup.y, "+" + string(pickup.goalScore) + "\n+TANGLE");
 			
 			//Maybe spawn untangle object when shape is fucked up
 			if (objCircle.waves.shape >= 5 && !instance_exists(objUntangle) && random(1) + objCircle.waves.shape / 50 > 0.5) {
-				point = index + 160 * choose(1, -1);
+				point = index + 130 * choose(1, -1);
 				if (point > 359) point = abs(point - 359);
 				if (point < 0) point = 359 + point;
 				
