@@ -15,5 +15,5 @@ shader_reset();
 
 for (var i = 0; i < hp; ++i) {
 	var space = 32;
-	draw_sprite_ext(sprHeart, 0,  space/2 + i * space, room_height - space / 2, scrWave(0.03, 0.05, 1, 0), scrWave(0.03, 0.05, 1, 0), 0, c_white, 1);
+	draw_sprite_ext(sprHeart, 0,  space/2 + i * space, room_height - space / 2, scrWave(0.03, 0.05, 1, 0), scrWave(0.03, 0.05, 1, 0), scrWave(-10, 10, 2, i/3), c_white, 1);
 }
