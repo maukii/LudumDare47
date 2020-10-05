@@ -74,7 +74,7 @@ if(spawningWave)
 		var lastIndex = waveIndex;
 		for(var i = 0; i < 10; i++)
 		{
-			waveIndex = irandom_range(1, 3);
+			waveIndex = irandom_range(1, 6);
 			if(waveIndex != lastIndex)
 				break;
 		}
