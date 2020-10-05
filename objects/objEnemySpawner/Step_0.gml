@@ -8,6 +8,11 @@ if(spawningWave)
 		var next = ds_list_find_value(waves, i);
 		if(next[_WAVE] == spawningWaveIndex) && (next[_DELAY] == timer)
 		{
+			with(objJan)
+			{
+				SetFace(5, 30);	
+			}
+			
 			switch(next[_TYPE])
 			{
 				case objEnemyCircle:
@@ -24,6 +29,10 @@ if(spawningWave)
 					cy = screenCenterY + lengthdir_y(25, dir);
 					e = instance_create_layer(cx, cy, layer, next[_TYPE]);
 					e.dir = dir;
+					with(objJan)
+					{
+						alarm[2] = 120;
+					}
 				break;
 				
 				case objEnemyBox:

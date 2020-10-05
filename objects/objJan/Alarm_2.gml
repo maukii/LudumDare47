@@ -1,2 +1,2 @@
-/// @description Special attack
-image_index = 0;
+/// @description ShootBullet
+SetFace(0, 30);

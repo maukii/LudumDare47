@@ -142,14 +142,15 @@ function SpawnWave(index)
 			maxDelay = next[_DELAY];
 		}
 	}
+	
+	SetFace(2, 60);
 }
 	
 function SpecialAttack()
 {
 	wavesComplited = 0;
 	instance_create_layer(screenCenterX, screenCenterY, "Enemies", objEnemyHeart);
-	alarm[2] = 1;
-	ResetFace(60);
+	SetFace(0, 60);
 }
 	
 function TakeDamage()
@@ -157,21 +158,19 @@ function TakeDamage()
 	bossHealth--;
 	if(bossHealth <= 0)
 	{
-		// Jan dead boy here	
 		spawningWave = false;
 	}
 	
-	// animation
-	// particles
-	// angry jan
-	// increase difficulty
 	delayBetweenWaves -= 20;
 	wavesPerPhase++;
 	alarm[3] = 1;
-	ResetFace(60);
+	SetFace(6, 60);
+	
+	audio_play_sound(choose(sndDamage, sndDamage2, sndDamage3, sndDamage4), 10, false);
 }
 
-function ResetFace(delay)
+function SetFace(id, resetDelay)
 {
-	alarm[10] = delay;	
+	image_index = id;
+	alarm[10] = resetDelay;	
 }
