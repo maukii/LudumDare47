@@ -56,9 +56,9 @@ switch (state) {
 		draw_text(room_width/2, 32, txt);
 		
 		draw_set_font(fntUISmall);
-		draw_set_valign(fa_top);
+		draw_set_valign(fa_center);
 		
-		txt = "SCORE: " + string(global.curScore) + "\n\nR TO RESTART";
+		txt = "SCORE: " + string(global.curScore) + "\n\nR TO RESTART\n\nESC TO ESCAPE THIS NIGHTMARE";
 		c = global.textHighlightColor;
 		
 		draw_text_color(room_width/2+1, room_height/2+1, txt, c, c, c, c, 1);

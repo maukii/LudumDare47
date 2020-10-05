@@ -1,10 +1,12 @@
 //Everything here will get ran once when the game is started
 //Use it to initialize shit
 
-#macro viewWidth 320
-#macro viewHeight 320
+#macro viewWidth 640
+#macro viewHeight 360
 
 global.windowScale = 3;
+
+window_set_fullscreen(true);
 
 function scrSetPush(amount, direction){
 	///@desc Push camera
