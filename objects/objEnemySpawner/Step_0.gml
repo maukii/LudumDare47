@@ -50,7 +50,10 @@ if(spawningWave)
 		timer = 0;
 		maxDelay = -1;
 		spawningWave = false;
-		spawningWaveIndex = irandom_range(1, 3);
+		
+		var size = ds_list_size(waves);
+		var maxWave = ds_list_find_value(waves, size-1);
+		spawningWaveIndex = irandom_range(1, maxWave[_WAVE]);
 		SpawnWave(spawningWaveIndex);
 	}
 }

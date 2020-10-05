@@ -15,8 +15,8 @@ spawningWaveIndex = -1;
 waves = ds_list_create(); 
 
 // [type, delay]
-ds_list_add(waves, [0, objEnemyCircle, 0]);
-ds_list_add(waves, [0, objEnemyCircle, 0]);
+ds_list_add(waves, [0, objEnemyCircle, 1]);
+ds_list_add(waves, [0, objEnemyCircle, 1]);
 ds_list_add(waves, [0, objEnemyCircle, 50]);
 ds_list_add(waves, [0, objEnemyCircle, 50]);
 ds_list_add(waves, [0, objEnemyCircle, 50]);
@@ -51,7 +51,7 @@ ds_list_add(waves, [0, objEnemyBox, 800]);
 ds_list_add(waves, [0, objEnemyBox, 800]);
 ds_list_add(waves, [0, objEnemyBox, 800]);
 
-ds_list_add(waves, [1, objEnemyCircle, 0]);
+ds_list_add(waves, [1, objEnemyCircle, 1]);
 ds_list_add(waves, [1, objEnemyCircle, 10]);
 ds_list_add(waves, [1, objEnemyCircle, 20]);
 ds_list_add(waves, [1, objEnemyCircle, 30]);
@@ -88,7 +88,7 @@ ds_list_add(waves, [2, objEnemyCircle, 120]);
 ds_list_add(waves, [2, objEnemyCircle, 150]);
 ds_list_add(waves, [2, objEnemyCircle, 150]);
 
-ds_list_add(waves, [3, objEnemyTriangle, 0]);
+ds_list_add(waves, [3, objEnemyTriangle, 1]);
 ds_list_add(waves, [3, objEnemyCircle, 10]);
 ds_list_add(waves, [3, objEnemyCircle, 10]);
 ds_list_add(waves, [3, objEnemyCircle, 10]);
@@ -104,6 +104,71 @@ ds_list_add(waves, [3, objEnemyCircle, 100]);
 ds_list_add(waves, [3, objEnemyCircle, 100]);
 ds_list_add(waves, [3, objEnemyCircle, 100]);
 ds_list_add(waves, [3, objEnemyCircle, 100]);
+
+ds_list_add(waves, [4, objEnemyTriangle, 1]);
+ds_list_add(waves, [4, objEnemyTriangle, 10]);
+ds_list_add(waves, [4, objEnemyTriangle, 20]);
+ds_list_add(waves, [4, objEnemyTriangle, 30]);
+ds_list_add(waves, [4, objEnemyTriangle, 40]);
+ds_list_add(waves, [4, objEnemyTriangle, 50]);
+ds_list_add(waves, [4, objEnemyBox, 60]);
+ds_list_add(waves, [4, objEnemyBox, 60]);
+ds_list_add(waves, [4, objEnemyBox, 60]);
+ds_list_add(waves, [4, objEnemyTriangle, 100]);
+ds_list_add(waves, [4, objEnemyTriangle, 110]);
+ds_list_add(waves, [4, objEnemyTriangle, 120]);
+ds_list_add(waves, [4, objEnemyTriangle, 130]);
+ds_list_add(waves, [4, objEnemyTriangle, 140]);
+ds_list_add(waves, [4, objEnemyTriangle, 150]);
+ds_list_add(waves, [4, objEnemyBox, 160]);
+ds_list_add(waves, [4, objEnemyBox, 160]);
+ds_list_add(waves, [4, objEnemyBox, 160]);
+ds_list_add(waves, [4, objEnemyCircle, 200]);
+ds_list_add(waves, [4, objEnemyCircle, 200]);
+ds_list_add(waves, [4, objEnemyCircle, 200]);
+ds_list_add(waves, [4, objEnemyCircle, 200]);
+ds_list_add(waves, [4, objEnemyCircle, 200]);
+ds_list_add(waves, [4, objEnemyCircle, 200]);
+ds_list_add(waves, [4, objEnemyCircle, 200]);
+ds_list_add(waves, [4, objEnemyCircle, 200]);
+
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyCircle, 1]);
+ds_list_add(waves, [5, objEnemyBox, 60]);
+ds_list_add(waves, [5, objEnemyBox, 60]);
+ds_list_add(waves, [5, objEnemyBox, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 60]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+ds_list_add(waves, [5, objEnemyCircle, 120]);
+
+
+
+
 
 
 function SpawnWave(waveIndex)
